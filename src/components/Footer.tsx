@@ -3,12 +3,12 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="py-24 bg-white">
-      <div className="container mx-auto px-6 sm:px-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer id="contact" className="py-32 bg-white">
+      <div className="container-wide">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16">
           <div>
-            <div className="mb-8">
-              <span className="text-2xl font-display text-primary">Change</span>
+            <div className="mb-10">
+              <span className="text-2xl font-display text-primary font-light">Change</span>
             </div>
             <p className="text-foreground/70 max-w-xs leading-relaxed">
               Making websites for people who just need them to work.
@@ -16,28 +16,28 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-display mb-6 font-normal">Contact</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xl font-display mb-8 font-light">Contact</h3>
+            <ul className="space-y-6">
               <li className="flex items-start">
-                <Mail className="h-5 w-5 text-primary mr-3 mt-0.5" />
+                <Mail className="h-5 w-5 text-primary mr-4 mt-0.5" />
                 <a href="mailto:hello@change.studio" className="text-foreground/70 hover:text-foreground">
                   hello@change.studio
                 </a>
               </li>
               <li className="flex items-start">
-                <Phone className="h-5 w-5 text-primary mr-3 mt-0.5" />
+                <Phone className="h-5 w-5 text-primary mr-4 mt-0.5" />
                 <span className="text-foreground/70">+1 (555) 123-4567</span>
               </li>
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-primary mr-3 mt-0.5" />
+                <MapPin className="h-5 w-5 text-primary mr-4 mt-0.5" />
                 <span className="text-foreground/70">123 Main Street<br />Portland, OR 97204</span>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-display mb-6 font-normal">Services</h3>
-            <ul className="space-y-3">
+            <h3 className="text-xl font-display mb-8 font-light">Services</h3>
+            <ul className="space-y-4">
               <li>
                 <a href="#services" className="text-foreground/70 hover:text-foreground">Website from scratch</a>
               </li>
@@ -51,8 +51,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-display mb-6 font-normal">Follow us</h3>
-            <div className="flex space-x-5">
+            <h3 className="text-xl font-display mb-8 font-light">Follow us</h3>
+            <div className="flex space-x-6">
               <a href="https://twitter.com" className="text-foreground/60 hover:text-foreground" aria-label="Twitter">
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
               </a>
@@ -66,7 +66,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-16 pt-10 border-t border-border/20 text-center">
+        <div className="mt-24 pt-14 border-t border-border/10 text-center">
           <p className="text-sm text-foreground/50">
             © {new Date().getFullYear()} Change. All rights reserved.
           </p>

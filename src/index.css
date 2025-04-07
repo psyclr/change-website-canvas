@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,25 +8,25 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 224 71% 4%;
+    --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
+    --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
+    --popover-foreground: 240 10% 3.9%;
 
-    --primary: 220 91% 54%;
+    --primary: 220 70% 60%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 220 14% 96%;
-    --secondary-foreground: 220 91% 54%;
+    --secondary-foreground: 220 70% 40%;
 
     --muted: 220 14% 96%;
     --muted-foreground: 220 8% 56%;
 
     --accent: 220 14% 96%;
-    --accent-foreground: 220 91% 54%;
+    --accent-foreground: 220 70% 40%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -35,7 +35,7 @@
     --input: 220 13% 91%;
     --ring: 224 71% 4%;
 
-    --radius: 0.5rem;
+    --radius: 1.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -48,11 +48,14 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased leading-relaxed;
+    @apply bg-background text-foreground antialiased leading-relaxed;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-normal tracking-wide;
+    @apply font-display font-light tracking-tight leading-snug;
   }
 }
 
@@ -63,16 +66,16 @@
   
   .highlight::after {
     content: '';
-    @apply absolute bg-primary/10 w-full h-[0.4em] bottom-1 left-0 -z-10;
+    @apply absolute bg-primary/15 w-full h-[0.4em] bottom-1 left-0 -z-10 rounded-full;
   }
 
   .timeline-item {
-    @apply relative pl-8 pb-12 border-l border-primary/10;
+    @apply relative pl-8 pb-14 border-l border-primary/10;
   }
   
   .timeline-item::before {
     content: '';
-    @apply absolute w-3 h-3 rounded-full bg-primary/30 -left-[6.5px] top-1;
+    @apply absolute w-3 h-3 rounded-full bg-primary/20 -left-[6.5px] top-1;
   }
   
   .timeline-item:last-child {
@@ -80,10 +83,18 @@
   }
 
   .service-card {
-    @apply p-10 rounded-3xl bg-white border border-primary/10 transition-all duration-300 hover:shadow-sm hover:-translate-y-1;
+    @apply p-10 rounded-3xl bg-white/50 border border-primary/5 transition-all duration-300 hover:shadow-sm hover:-translate-y-1;
   }
   
   .text-gradient {
     @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
+  }
+
+  .container-wide {
+    @apply container max-w-6xl mx-auto px-8 sm:px-10 md:px-12 lg:px-16;
+  }
+  
+  .section-spacing {
+    @apply py-32 md:py-40;
   }
 }
