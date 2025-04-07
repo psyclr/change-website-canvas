@@ -80,6 +80,11 @@
   }
 
   .service-card {
-    @apply p-8 rounded-2xl bg-white border border-border transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+    @apply p-8 rounded-2xl bg-white border border-border/50 transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
   }
 }
+
