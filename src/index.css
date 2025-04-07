@@ -70,7 +70,7 @@
   }
 
   .timeline-item {
-    @apply relative pl-8 pb-14 border-l border-primary/10;
+    @apply relative pl-8 pb-14;
   }
   
   .timeline-item::before {
@@ -79,11 +79,11 @@
   }
   
   .timeline-item:last-child {
-    @apply border-l-0 pb-0;
+    @apply pb-0;
   }
 
   .service-card {
-    @apply p-10 rounded-3xl bg-white/50 border border-primary/5 transition-all duration-300 hover:shadow-sm hover:-translate-y-1;
+    @apply p-10 rounded-3xl bg-white/70 border border-primary/5 transition-all duration-300 hover:shadow-sm hover:-translate-y-1;
   }
   
   .text-gradient {
@@ -96,5 +96,43 @@
   
   .section-spacing {
     @apply py-32 md:py-40;
+  }
+  
+  /* New decorative elements */
+  .floating-shape {
+    @apply absolute rounded-full border border-primary/10 animate-float;
+  }
+  
+  .blob-shape {
+    @apply absolute blur-3xl opacity-30 animate-pulse-slow;
+  }
+}
+
+/* Animation keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 8s ease-in-out infinite;
   }
 }
