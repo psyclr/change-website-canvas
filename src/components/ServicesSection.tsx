@@ -1,5 +1,5 @@
 
-import { ArrowRight, Globe, PenTool, Share2 } from "lucide-react";
+import { ArrowRight, Globe, PenTool, HandHelping } from "lucide-react";
 
 const ServiceCard = ({ 
   title, 
@@ -29,28 +29,30 @@ const ServicesSection = () => {
   return (
     <section id="services" className="py-20 md:py-28">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-display mb-4">What we do</h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Simple, focused services that solve real business problems without unnecessary complexity.
+            Change is about making honest, useful websites.
+            We work with small businesses, friends with ideas, and people who care about what they do.
+            No fancy tech talk — just clear structure, clean look, and real attention.
           </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
           <ServiceCard 
-            title="Website Design" 
-            description="Clean, focused websites that help your customers understand what you offer in seconds."
+            title="Website from scratch" 
+            description="Need a website? We'll handle everything — layout, design, content, launch. You won't have to think about DNS or CMS or whatever. Just focus on your business."
             icon={Globe}
           />
           <ServiceCard 
-            title="Brand Identity" 
-            description="Visual language that communicates your values and connects with your audience."
+            title="Fix your old site" 
+            description="Got a site that feels outdated, slow or confusing? We'll keep what works, update what doesn't, and make it feel fresh again."
             icon={PenTool}
           />
           <ServiceCard 
-            title="Digital Strategy" 
-            description="Practical approaches to get your message to the right people at the right time."
-            icon={Share2}
+            title="Simple updates & support" 
+            description="Need to change a photo? Add a page? We're here. No contracts, no subscriptions — just help when you need it."
+            icon={HandHelping}
           />
         </div>
       </div>

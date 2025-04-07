@@ -11,7 +11,7 @@ const Footer = () => {
               <span className="text-2xl font-display text-primary">Change</span>
             </div>
             <p className="text-foreground/70 max-w-xs">
-              Making the web more human, one site at a time.
+              Making websites for people who just need them to work.
             </p>
           </div>
           
@@ -20,8 +20,8 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Mail className="h-5 w-5 text-primary mr-2 mt-0.5" />
-                <a href="mailto:hello@changeagency.com" className="text-foreground/70 hover:text-foreground">
-                  hello@changeagency.com
+                <a href="mailto:hello@change.studio" className="text-foreground/70 hover:text-foreground">
+                  hello@change.studio
                 </a>
               </li>
               <li className="flex items-start">
@@ -39,13 +39,13 @@ const Footer = () => {
             <h3 className="text-lg font-display mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#services" className="text-foreground/70 hover:text-foreground">Website Design</a>
+                <a href="#services" className="text-foreground/70 hover:text-foreground">Website from scratch</a>
               </li>
               <li>
-                <a href="#services" className="text-foreground/70 hover:text-foreground">Brand Identity</a>
+                <a href="#services" className="text-foreground/70 hover:text-foreground">Fix your old site</a>
               </li>
               <li>
-                <a href="#services" className="text-foreground/70 hover:text-foreground">Digital Strategy</a>
+                <a href="#services" className="text-foreground/70 hover:text-foreground">Simple updates & support</a>
               </li>
             </ul>
           </div>
@@ -68,7 +68,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-border/50 text-center">
           <p className="text-sm text-foreground/60">
-            © {new Date().getFullYear()} Change Agency. All rights reserved.
+            © {new Date().getFullYear()} Change. All rights reserved.
           </p>
         </div>
       </div>

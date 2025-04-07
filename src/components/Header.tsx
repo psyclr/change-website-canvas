@@ -12,11 +12,11 @@ const Header = () => {
         </div>
         
         <div className="hidden md:flex space-x-8 items-center">
-          <a href="#services" className="text-sm text-foreground/80 hover:text-foreground transition-colors">Services</a>
-          <a href="#process" className="text-sm text-foreground/80 hover:text-foreground transition-colors">Process</a>
+          <a href="#services" className="text-sm text-foreground/80 hover:text-foreground transition-colors">What we do</a>
+          <a href="#process" className="text-sm text-foreground/80 hover:text-foreground transition-colors">How we work</a>
           <a href="#contact" className="text-sm text-foreground/80 hover:text-foreground transition-colors">Contact</a>
           <Button asChild size="sm" className="rounded-full">
-            <a href="#get-started">Get Started</a>
+            <a href="#get-started">Start project</a>
           </Button>
         </div>
         
@@ -29,11 +29,11 @@ const Header = () => {
           </SheetTrigger>
           <SheetContent>
             <nav className="flex flex-col space-y-4 mt-8">
-              <a href="#services" className="text-foreground/80 hover:text-foreground transition-colors py-2">Services</a>
-              <a href="#process" className="text-foreground/80 hover:text-foreground transition-colors py-2">Process</a>
+              <a href="#services" className="text-foreground/80 hover:text-foreground transition-colors py-2">What we do</a>
+              <a href="#process" className="text-foreground/80 hover:text-foreground transition-colors py-2">How we work</a>
               <a href="#contact" className="text-foreground/80 hover:text-foreground transition-colors py-2">Contact</a>
               <Button asChild className="mt-4 rounded-full">
-                <a href="#get-started">Get Started</a>
+                <a href="#get-started">Start project</a>
               </Button>
             </nav>
           </SheetContent>
