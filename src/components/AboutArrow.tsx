@@ -1,7 +1,9 @@
 import HandDrawnArrow from "@/components/ui/HandDrawnArrow";
 import { SprayLine } from "@/components/spray/SprayLine";
+import { useTranslation } from 'react-i18next';
 
 const AboutArrow = () => {
+  const { t } = useTranslation('common');
   const handleClick = () => {
     const resultsSection = document.getElementById('results');
     if (resultsSection) {
@@ -25,9 +27,9 @@ const AboutArrow = () => {
           {/* Текст между стрелками */}
           <div className="text-center relative">
             <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
-              Смотрите <span className="relative inline-block">
-                работы.
-                {/* Спрайт под словом "работы" */}
+              {t('hero.view_work_text').split(' ').slice(0, 1).join(' ')} <span className="relative inline-block">
+                {t('hero.view_work_text').split(' ').slice(1).join(' ')}
+                {/* Спрайт под последним словом */}
                 <div className="absolute top-full left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                   <div style={{filter: 'drop-shadow(0 0 1.5px black) drop-shadow(0 0 1.5px black)'}}>
                     <SprayLine 

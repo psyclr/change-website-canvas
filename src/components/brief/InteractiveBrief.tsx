@@ -3,8 +3,10 @@ import { BriefData, BriefStep } from './types';
 import BriefStepComponent from './BriefStepComponent';
 import BriefPreview from './BriefPreview';
 import { briefSteps } from './briefSteps';
+import { useTranslation } from 'react-i18next';
 
 const InteractiveBrief: React.FC = () => {
+  const { t } = useTranslation('common');
   const [isStarted, setIsStarted] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -57,7 +59,7 @@ const InteractiveBrief: React.FC = () => {
   }, [briefData, shouldAutoNext]);
 
   const handleNext = () => {
-    const steps = briefSteps(briefData);
+    const steps = briefSteps(briefData, t);
     console.log('Current step:', currentStep, 'Total steps:', steps.length, 'Brief data hasSite:', briefData.hasSite);
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
@@ -103,10 +105,10 @@ const InteractiveBrief: React.FC = () => {
         <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-muted">
           <div className="text-center mb-6">
             <h3 className="text-xl md:text-2xl font-heading font-medium mb-3 text-fg">
-              Расскажите о вашем проекте
+              {t('brief.start_form.title')}
             </h3>
             <p className="text-base text-fg/70 leading-relaxed mb-4">
-              Несколько вопросов помогут подготовить персональное предложение
+              {t('brief.start_form.subtitle')}
             </p>
           </div>
 
@@ -119,7 +121,7 @@ const InteractiveBrief: React.FC = () => {
               </div>
               <div>
                 <p className="text-fg/70 text-sm">
-                  Заполнение займет 3-5 минут • Свяжемся в течение дня • <strong>Оплата только после вашего одобрения проекта</strong>
+                  {t('brief.start_form.info')}
                 </p>
               </div>
             </div>
@@ -130,13 +132,13 @@ const InteractiveBrief: React.FC = () => {
               onClick={handleStart}
               className="btn-primary text-lg px-8 py-3 inline-flex items-center"
             >
-              Начать заполнение
+              {t('brief.start_button')}
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
             <p className="text-sm text-fg/60 mt-2">
-              Все поля опциональны
+              {t('brief.start_form.optional')}
             </p>
           </div>
         </div>
@@ -156,16 +158,16 @@ const InteractiveBrief: React.FC = () => {
           </div>
           
           <h3 className="text-xl md:text-2xl font-heading font-medium mb-3 text-fg">
-            Спасибо за заявку!
+            {t('brief.completion.title')}
           </h3>
           
           <p className="text-base text-fg/70 leading-relaxed mb-4">
-            Мы получили ваш бриф и свяжемся в течение рабочего дня
+            {t('brief.completion.message')}
           </p>
           
           <div className="bg-accent/5 border border-accent/20 rounded-xl p-4 mb-6">
             <p className="text-fg/70 text-sm">
-              Контакт для связи: <strong>{briefData.contact.email}</strong>
+              {t('footer.contact.email')}: <strong>{briefData.contact.email}</strong>
             </p>
           </div>
           
@@ -174,13 +176,13 @@ const InteractiveBrief: React.FC = () => {
               onClick={() => window.location.reload()}
               className="btn-primary px-6 py-3 w-full"
             >
-              Заполнить еще один бриф
+              {t('brief.start_button')}
             </button>
             <button
               onClick={() => window.location.href = '#'}
               className="btn-outline px-6 py-2 w-full text-sm"
             >
-              Вернуться на главную
+              {t('navigation.home')}
             </button>
           </div>
         </div>
@@ -188,7 +190,7 @@ const InteractiveBrief: React.FC = () => {
     );
   }
 
-  const steps = briefSteps(briefData);
+  const steps = briefSteps(briefData, t);
   const currentStepData = steps[currentStep];
 
   return (

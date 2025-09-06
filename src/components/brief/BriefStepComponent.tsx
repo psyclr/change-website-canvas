@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { ArrowRight, SkipForward } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
   step,
@@ -15,11 +16,12 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
   totalSteps,
   isSubmitting = false
 }) => {
+  const { t } = useTranslation('common');
   const [localValue, setLocalValue] = useState<any>('');
 
   const handleChoice = (option: string) => {
     const value = step.field === 'hasSite' 
-      ? option === 'Нет, нужен новый сайт' ? false : true
+      ? option === t('brief.questions.has_site.options.no') ? false : true
       : option;
     
     onAnswer(step.field, value, onNext);
@@ -98,7 +100,7 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
               ))}
             </div>
             <Button onClick={onNext} className="btn-primary w-full">
-              Далее <ArrowRight className="ml-2 h-4 w-4" />
+              {t('brief.navigation.next')} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         );
@@ -130,7 +132,7 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
               className="btn-primary w-full"
               disabled={!localValue.trim()}
             >
-              Далее <ArrowRight className="ml-2 h-4 w-4" />
+              {t('brief.navigation.next')} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         );
@@ -141,24 +143,24 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
             <Input
               value={briefData.contact.name}
               onChange={(e) => onAnswer('contact', { ...briefData.contact, name: e.target.value })}
-              placeholder="Имя"
+              placeholder={t('brief.questions.contact.name_placeholder')}
             />
             <Input
               type="email"
               value={briefData.contact.email}
               onChange={(e) => onAnswer('contact', { ...briefData.contact, email: e.target.value })}
-              placeholder="Email"
+              placeholder={t('brief.questions.contact.email_placeholder')}
             />
             <Input
               type="tel"
               value={briefData.contact.phone}
               onChange={(e) => onAnswer('contact', { ...briefData.contact, phone: e.target.value })}
-              placeholder="Телефон (по желанию)"
+              placeholder={t('brief.questions.contact.phone_placeholder')}
             />
             <Textarea
               value={briefData.notes}
               onChange={(e) => onAnswer('notes', e.target.value)}
-              placeholder="Комментарий (по желанию)"
+              placeholder={t('brief.questions.additional_notes.placeholder')}
               className="min-h-[80px]"
             />
             <Button 
@@ -172,11 +174,11 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  Отправляем...
+                  {t('common.loading')}
                 </>
               ) : (
                 <>
-                  Отправить <ArrowRight className="ml-2 h-4 w-4" />
+                  {t('brief.navigation.submit')} <ArrowRight className="ml-2 h-4 w-4" />
                 </>
               )}
             </Button>
@@ -218,7 +220,7 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
             className="text-fg/60 hover:text-fg text-sm flex items-center justify-center mx-auto transition-colors"
           >
             <SkipForward className="mr-1 h-3 w-3" />
-            Пропустить
+            {t('brief.navigation.skip')}
           </button>
         </div>
       )}

@@ -1,0 +1,195 @@
+{
+  "navigation": {
+    "home": "Strona główna",
+    "process": "Proces",
+    "results": "Realizacje",
+    "brief": "Brief",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Biznes potrzebuje porządnej <1>strony internetowej</1>.",
+    "subtitle": "Tworzymy strony internetowe, które rzeczywiście działają dla Twojego biznesu",
+    "cta_primary": "Wypełnij brief",
+    "cta_secondary": "Zobacz przykłady",
+    "arrow_text": "Robimy strony internetowe.",
+    "cta_arrow_text": "Wypełnij brief.",
+    "view_work_text": "Zobacz nasze prace."
+  },
+  "process": {
+    "title": "O nas",
+    "subtitle": "Prosty, przejrzysty proces bez niepotrzebnych komplikacji",
+    "step1": {
+      "title": "Kim jesteśmy",
+      "description": "Postanowiliśmy tworzyć strony internetowe, aby pomóc małym firmom być online"
+    },
+    "step2": {
+      "title": "Nasz zespół",
+      "description": "Sami jesteśmy małą firmą — programista i designer"
+    },
+    "step3": {
+      "title": "Technologia",
+      "description": "Używamy najnowszych technologii, więc pracujemy szybko"
+    }
+  },
+  "results": {
+    "title": "Nasze realizacje",
+    "subtitle": "Prawdziwe strony dla prawdziwego biznesu",
+    "portfolio": {
+      "page1": {
+        "title": "Strona główna",
+        "description": "Opis usług alpinizmu przemysłowego"
+      },
+      "page2": {
+        "title": "Portfolio prac",
+        "description": "Przykłady wykonanych projektów i obiektów"
+      },
+      "page3": {
+        "title": "Szczegóły usług",
+        "description": "Szczegółowe procesy pracy i technologie"
+      }
+    }
+  },
+  "brief": {
+    "title": "Interaktywny brief",
+    "subtitle": "Odpowiedz na pytania — pokażemy, jak może wyglądać Twoja strona. Bez telefonów, bez spamu.",
+    "start_button": "Rozpocznij brief",
+    "start_form": {
+      "title": "Opowiedz nam o swoim projekcie",
+      "subtitle": "Kilka pytań pomoże nam przygotować spersonalizowaną ofertę",
+      "info": "Zajmie 3-5 minut • Skontaktujemy się w ciągu dnia • Płatność tylko po zatwierdzeniu projektu",
+      "optional": "Wszystkie pola są opcjonalne"
+    },
+    "questions": {
+      "has_site": {
+        "title": "Czy masz już stronę internetową?",
+        "options": {
+          "yes": "Tak, mam stronę internetową",
+          "no": "Nie, potrzebuję nowej strony"
+        }
+      },
+      "business_description": {
+        "title": "Opowiedz nam o swoim biznesie",
+        "placeholder": "Czym zajmuje się Twoja firma? Jakie produkty lub usługi oferujesz?"
+      },
+      "target_audience": {
+        "title": "Kto to Twoja grupa docelowa?",
+        "placeholder": "Opisz swoich idealnych klientów"
+      },
+      "website_goals": {
+        "title": "Co powinna osiągnąć Twoja strona?",
+        "options": [
+          "Generować leady i zapytania",
+          "Sprzedawać produkty online",
+          "Pokazywać portfolio/prace",
+          "Dostarczać informacje o usługach",
+          "Budować świadomość marki",
+          "Wspierać istniejących klientów"
+        ]
+      },
+      "design_style": {
+        "title": "Jaki styl designu preferujesz?",
+        "options": [
+          "Nowoczesny i minimalistyczny",
+          "Odważny i kreatywny",
+          "Korporacyjny i profesjonalny",
+          "Zabawny i żywiołowy",
+          "Elegancki i luksusowy"
+        ]
+      },
+      "budget_range": {
+        "title": "Jaki jest Twój budżet?",
+        "options": [
+          "8,000 - 20,000 zł",
+          "20,000 - 40,000 zł",
+          "40,000 - 80,000 zł",
+          "Powyżej 80,000 zł"
+        ]
+      },
+      "timeline": {
+        "title": "Kiedy potrzebujesz strony?",
+        "options": [
+          "Jak najszybciej (pilne)",
+          "W ciągu miesiąca",
+          "W ciągu 2-3 miesięcy",
+          "Bez określonego terminu"
+        ]
+      },
+      "contact": {
+        "title": "Informacje kontaktowe",
+        "name": "Imię i nazwisko",
+        "name_placeholder": "Jan Kowalski",
+        "email": "Adres email", 
+        "email_placeholder": "jan@firma.pl",
+        "phone": "Numer telefonu",
+        "phone_placeholder": "+48 123 456 789",
+        "company": "Nazwa firmy",
+        "company_placeholder": "Twoja Firma Sp. z o.o."
+      },
+      "additional_notes": {
+        "title": "Dodatkowe wymagania",
+        "placeholder": "Czy są jakieś specjalne funkcje, integracje lub szczególne wymagania?"
+      }
+    },
+    "navigation": {
+      "next": "Dalej",
+      "previous": "Wstecz",
+      "submit": "Wyślij brief",
+      "skip": "Pomiń to pytanie"
+    },
+    "completion": {
+      "title": "Dziękujemy!",
+      "message": "Otrzymaliśmy Twój brief i skontaktujemy się z Tobą w ciągu 24 godzin ze szczegółową propozycją.",
+      "next_steps": "Co będzie dalej:",
+      "step1": "Przeanalizujemy Twoje wymagania",
+      "step2": "Stworzymy szczegółową propozycję z harmonogramem i ceną",
+      "step3": "Umówimy rozmowę, aby omówić projekt"
+    },
+    "preview": {
+      "title": "Podgląd strony",
+      "company_name": "Nazwa firmy",
+      "your_business": "Twój biznes",
+      "services_description": "Opis usług",
+      "for_audience": "Dla",
+      "order_service": "Zamów usługę",
+      "services": "Usługi",
+      "service": "Usługa",
+      "our_work": "Nasze prace",
+      "find_us": "Gdzie nas znaleźć",
+      "map": "Mapa",
+      "contacts": "Kontakt",
+      "call": "Zadzwoń",
+      "leave_request": "Zostaw zapytanie",
+      "deadline": "Termin",
+      "budget": "Budżet"
+    }
+  },
+  "footer": {
+    "company_description": "Tworzymy strony internetowe dla tych, którzy po prostu potrzebują, żeby działały.",
+    "contact_title": "Kontakt",
+    "services_title": "Usługi", 
+    "follow_title": "Śledź nas",
+    "services": {
+      "new_website": "Strona od zera",
+      "fix_website": "Naprawa starej strony", 
+      "support": "Proste aktualizacje i wsparcie"
+    },
+    "contact": {
+      "email": "hello@change.studio",
+      "phone": "+48 123 456 789",
+      "address": "ul. Główna 123, 00-001 Warszawa"
+    },
+    "copyright": "© {{year}} Change. Wszelkie prawa zastrzeżone."
+  },
+  "language_switcher": {
+    "current_language": "Polski",
+    "select_language": "Wybierz język"
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Coś poszło nie tak",
+    "try_again": "Spróbuj ponownie",
+    "required_field": "To pole jest wymagane",
+    "invalid_email": "Wprowadź prawidłowy adres email",
+    "invalid_phone": "Wprowadź prawidłowy numer telefonu"
+  }
+}

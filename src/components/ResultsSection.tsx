@@ -1,133 +1,175 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SectionContainer from '@/components/layout/SectionContainer';
-import SectionGlassCard from '@/components/ui/SectionGlassCard';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { ExternalLink } from 'lucide-react';
+import Sticker from '@/components/ui/Sticker';
+import ImageModal from '@/components/ui/ImageModal';
+import { Search } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-/**
- * ResultsSection - секция с портфолио работ
- * Внешняя карусель переключает между проектами
- * Внутренняя карусель показывает скриншоты каждого проекта
- */
+interface ModalState {
+  isOpen: boolean;
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+}
+
 const ResultsSection: React.FC = () => {
-  const projects = [
-    {
-      title: 'MaxTempo - Usługi Alpinistyczne',
-      description: 'Profesjonalny sайт компании альпинистских услуг. Современный дизайн, портфолио работ и подробное описание услуг для корпоративных клиентов.',
-      url: 'https://max-tempo.com',
-      screenshots: [
-        './portfolio/maxtempo-homepage.jpg',
-        './portfolio/maxtempo-portfolio.jpg', 
-        './portfolio/maxtempo-services.jpg'
-      ],
-      screenshotLabels: [
-        'Главная страница с hero-секцией',
-        'Портфолио реализованных проектов',
-        'Описание услуг и процессов работы'
-      ]
-    }
-  ];
+  const { t } = useTranslation('common');
+  
+  const [modal, setModal] = useState<ModalState>({
+    isOpen: false,
+    imageSrc: '',
+    imageAlt: '',
+    title: '',
+    description: ''
+  });
+
+  const openModal = (imageSrc: string, imageAlt: string, title: string, description: string) => {
+    setModal({
+      isOpen: true,
+      imageSrc,
+      imageAlt,
+      title,
+      description
+    });
+  };
+
+  const closeModal = () => {
+    setModal(prev => ({ ...prev, isOpen: false }));
+  };
 
   return (
-    <SectionContainer variant="light" id="results" className="min-h-[60vh] flex flex-col items-center justify-start pt-24">
-      {/* Заголовок и описание секции - компактные */}
-      <div className="text-center mb-6 relative z-20">
-        <h2 className="text-2xl md:text-3xl font-heading font-medium mb-4 text-fg">
-          Примеры работ
-        </h2>
+    <SectionContainer variant="light" id="results" className="min-h-screen flex items-center justify-center py-20">
+      <div className="container-wide">
+        <div className="max-w-6xl mx-auto">
+          {/* Заголовок секции */}
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-4xl font-heading font-medium mb-6">
+              {t('results.title')}
+            </h2>
+            <p className="text-lg text-fg/70 max-w-2xl mx-auto">
+              {t('results.subtitle')}
+            </p>
+          </div>
+
+          {/* Стикеры со скриншотами реального проекта */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+            
+            {/* Стикер 1 - Главная страница */}
+            <div className="flex justify-center">
+              <Sticker rotation={-2} className="max-w-xs">
+                <div className="space-y-3">
+                  <div 
+                    className="aspect-[4/3] rounded-lg overflow-hidden bg-white/10 cursor-pointer hover:scale-105 transition-transform duration-200 relative group"
+                    onClick={() => openModal(
+                      "./portfolio/maxtempo-homepage.jpg",
+                      t('results.portfolio.page1.title'),
+                      t('results.portfolio.page1.title'),
+                      t('results.portfolio.page1.description')
+                    )}
+                  >
+                    <img
+                      src="./portfolio/maxtempo-homepage.jpg"
+                      alt={t('results.portfolio.page1.title')}
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-75"
+                      loading="lazy"
+                    />
+                    {/* Overlay с лупой при наведении */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
+                        <Search className="h-6 w-6 text-gray-700" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="mb-2 font-bold text-lg">{t('results.portfolio.page1.title')}</div>
+                    <div className="text-sm">{t('results.portfolio.page1.description')}</div>
+                  </div>
+                </div>
+              </Sticker>
+            </div>
+
+            {/* Стикер 2 - Портфолио */}
+            <div className="flex justify-center">
+              <Sticker rotation={1} className="max-w-xs">
+                <div className="space-y-3">
+                  <div 
+                    className="aspect-[4/3] rounded-lg overflow-hidden bg-white/10 cursor-pointer hover:scale-105 transition-transform duration-200 relative group"
+                    onClick={() => openModal(
+                      "./portfolio/maxtempo-portfolio.jpg",
+                      t('results.portfolio.page2.title'),
+                      t('results.portfolio.page2.title'),
+                      t('results.portfolio.page2.description')
+                    )}
+                  >
+                    <img
+                      src="./portfolio/maxtempo-portfolio.jpg"
+                      alt={t('results.portfolio.page2.title')}
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-75"
+                      loading="lazy"
+                    />
+                    {/* Overlay с лупой при наведении */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
+                        <Search className="h-6 w-6 text-gray-700" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="mb-2 font-bold text-lg">{t('results.portfolio.page2.title')}</div>
+                    <div className="text-sm">{t('results.portfolio.page2.description')}</div>
+                  </div>
+                </div>
+              </Sticker>
+            </div>
+
+            {/* Стикер 3 - Услуги */}
+            <div className="flex justify-center md:col-span-2 lg:col-span-1">
+              <Sticker rotation={-1} className="max-w-xs">
+                <div className="space-y-3">
+                  <div 
+                    className="aspect-[4/3] rounded-lg overflow-hidden bg-white/10 cursor-pointer hover:scale-105 transition-transform duration-200 relative group"
+                    onClick={() => openModal(
+                      "./portfolio/maxtempo-services.jpg",
+                      t('results.portfolio.page3.title'),
+                      t('results.portfolio.page3.title'),
+                      t('results.portfolio.page3.description')
+                    )}
+                  >
+                    <img
+                      src="./portfolio/maxtempo-services.jpg"
+                      alt={t('results.portfolio.page3.title')}
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-75"
+                      loading="lazy"
+                    />
+                    {/* Overlay с лупой при наведении */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
+                        <Search className="h-6 w-6 text-gray-700" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="mb-2 font-bold text-lg">{t('results.portfolio.page3.title')}</div>
+                    <div className="text-sm">{t('results.portfolio.page3.description')}</div>
+                  </div>
+                </div>
+              </Sticker>
+            </div>
+
+          </div>
+        </div>
       </div>
 
-      {/* Контейнер для родительской карусели - более компактный */}
-      <div className="flex items-center justify-center gap-6 relative z-20 max-w-4xl w-full px-4">
-        {/* Внешняя карусель - переключение между проектами */}
-        <Carousel
-          opts={{
-            align: "center",
-            loop: true,
-          }}
-          className="w-full max-w-3xl"
-        >
-          {/* Левая стрелка родительской карусели */}
-          <CarouselPrevious className="text-fg/50 bg-fg/5 backdrop-blur-sm border-fg/10 hover:bg-fg/15 hover:text-fg/70 h-16 w-6 absolute -left-10 top-1/2 -translate-y-1/2 rounded-full transition-all duration-200 z-30" />
-          
-          <CarouselContent>
-            {projects.map((project, projectIndex) => (
-              <CarouselItem key={projectIndex} className="basis-full">
-                {/* SectionGlassCard с внутренней каруселью - убираем отступы */}
-                <SectionGlassCard variant="light" className="!mx-0 !p-3 md:!p-4">
-                  <div className="relative z-20">
-                    {/* Заголовок и описание проекта - более компактные */}
-                    <div className="mb-4 text-center">
-                      <h3 className="text-lg md:text-xl font-semibold text-fg mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-fg/70 text-xs md:text-sm leading-relaxed max-w-xl mx-auto">
-                        {project.description}
-                      </p>
-                    </div>
-                    
-                    {/* Карусель скриншотов на весь размер карточки */}
-                    <Carousel
-                      opts={{
-                        align: "center",
-                        loop: true,
-                      }}
-                      className="w-full"
-                    >
-                      <CarouselContent>
-                        {project.screenshots.map((screenshot, screenshotIndex) => (
-                          <CarouselItem key={screenshotIndex} className="basis-full">
-                            {/* Кликабельное изображение на весь размер */}
-                            <a 
-                              href={project.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="block cursor-pointer group"
-                            >
-                              <div className="relative aspect-[5/3] rounded-xl overflow-hidden bg-white/10 group-hover:scale-[1.02] transition-transform duration-300">
-                                <img
-                                  src={screenshot}
-                                  alt={project.screenshotLabels ? project.screenshotLabels[screenshotIndex] : `${project.title} - скриншот ${screenshotIndex + 1}`}
-                                  className="w-full h-full object-cover"
-                                  loading="lazy"
-                                />
-                                {/* Overlay для лучшей видимости */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent group-hover:from-black/20 transition-colors duration-300" />
-                                
-                                {/* Индикатор ссылки */}
-                                <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                  <ExternalLink className="h-4 w-4 text-white" />
-                                </div>
-                              </div>
-                            </a>
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      
-                      {/* Элементы управления внутренней карусели - ВНУТРИ карточки */}
-                      <CarouselPrevious className="text-fg/60 bg-white/80 backdrop-blur-sm border-fg/20 hover:bg-white hover:text-fg/80 h-12 w-12 absolute left-2 top-1/2 -translate-y-1/2 rounded-full transition-all duration-200 z-30 shadow-lg" />
-                      <CarouselNext className="text-fg/60 bg-white/80 backdrop-blur-sm border-fg/20 hover:bg-white hover:text-fg/80 h-12 w-12 absolute right-2 top-1/2 -translate-y-1/2 rounded-full transition-all duration-200 z-30 shadow-lg" />
-                      
-                      {/* Индикаторы скриншотов */}
-                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-30">
-                        {project.screenshots.map((_, index) => (
-                          <div 
-                            key={index} 
-                            className="w-2 h-2 rounded-full bg-fg/40 transition-all duration-200"
-                          />
-                        ))}
-                      </div>
-                    </Carousel>
-                  </div>
-                </SectionGlassCard>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          
-          {/* Правая стрелка родительской карусели */}
-          <CarouselNext className="text-fg/50 bg-fg/5 backdrop-blur-sm border-fg/10 hover:bg-fg/15 hover:text-fg/70 h-16 w-6 absolute -right-10 top-1/2 -translate-y-1/2 rounded-full transition-all duration-200 z-30" />
-        </Carousel>
-      </div>
+      {/* Модальное окно для увеличения скриншотов */}
+      <ImageModal
+        isOpen={modal.isOpen}
+        onClose={closeModal}
+        imageSrc={modal.imageSrc}
+        imageAlt={modal.imageAlt}
+        title={modal.title}
+        description={modal.description}
+      />
     </SectionContainer>
   );
 };

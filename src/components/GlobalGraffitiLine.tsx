@@ -26,7 +26,7 @@ const GlobalGraffitiLine: React.FC = () => {
   ];
 
   return (
-    <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden" style={{ height: '300vh' }}>
+    <div className="absolute inset-0 pointer-events-none z-5 overflow-hidden">
       {/* Блок 1 - верхняя часть загогулины */}
       <MainGraffitiLine
         points={block1Points}

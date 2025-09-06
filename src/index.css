@@ -90,6 +90,12 @@
     letter-spacing: -0.01em;
     background-color: var(--bg);
     color: var(--fg);
+    scroll-behavior: smooth;
+  }
+  
+  /* Root container scroll snap */
+  html {
+    scroll-snap-type: y mandatory;
   }
 
   @media (min-width: 640px) {

@@ -1,13 +1,14 @@
 import { BriefData, BriefStep } from './types';
+import { TFunction } from 'i18next';
 
-export const briefSteps = (briefData: BriefData): BriefStep[] => {
+export const briefSteps = (briefData: BriefData, t: TFunction): BriefStep[] => {
   // Начальный выбор пути
   const initialStep: BriefStep = {
     id: 'initial',
-    title: 'У вас уже есть сайт?',
+    title: t('brief.questions.has_site.title'),
     type: 'choice',
     field: 'hasSite',
-    options: ['Нет, нужен новый сайт', 'Есть сайт, но требует доработки'],
+    options: [t('brief.questions.has_site.options.no'), t('brief.questions.has_site.options.yes')],
     canSkip: false
   };
 
@@ -15,245 +16,141 @@ export const briefSteps = (briefData: BriefData): BriefStep[] => {
   const scenarioA: BriefStep[] = [
     {
       id: 'business',
-      title: 'Расскажите о вашем бизнесе',
+      title: t('brief.questions.business_description.title'),
       type: 'text',
       field: 'business',
-      placeholder: 'Например: Мы ремонтируем велосипеды уже 10 лет, специализируемся на горных и шоссейных велосипедах',
-      options: ['интернет-магазин', 'услуги для бизнеса', 'услуги для частных лиц', 'производство', 'ресторан/кафе', 'медицина', 'образование', 'другое'],
+      placeholder: t('brief.questions.business_description.placeholder'),
+      options: [],
       canSkip: true
     },
     {
       id: 'audience',
-      title: 'Кто ваши основные клиенты?',
+      title: t('brief.questions.target_audience.title'),
       type: 'text',
       field: 'audience',
-      placeholder: 'Опишите, кто покупает ваши товары или услуги, их возраст, интересы, потребности',
-      options: ['владельцы бизнеса', 'частные лица', 'семьи с детьми', 'молодежь 18-30', 'средний возраст 30-50', 'пожилые люди 50+', 'специалисты в области'],
+      placeholder: t('brief.questions.target_audience.placeholder'),
+      options: [],
       canSkip: true
     },
     {
       id: 'goals',
-      title: 'Основные цели сайта',
+      title: t('brief.questions.website_goals.title'),
       type: 'multiselect',
       field: 'goals',
-      options: [
-        'привлекать новых клиентов',
-        'получать онлайн заявки',
-        'показывать портфолио работ',
-        'предоставлять информацию о компании'
-      ],
+      options: t('brief.questions.website_goals.options', { returnObjects: true }) as string[],
       canSkip: true
     },
     {
       id: 'style',
-      title: 'Предпочтения в дизайне',
+      title: t('brief.questions.design_style.title'),
       type: 'choice',
       field: 'style',
-      options: [
-        'минимализм — чистый, простой дизайн',
-        'классический деловой — строгий и надежный',
-        'современный яркий — смелые цвета и формы',
-        'творческий — необычный и запоминающийся',
-        'не знаю, доверяюсь профессионалам'
-      ],
-      canSkip: true
-    },
-    {
-      id: 'content',
-      title: 'Что у вас есть для наполнения сайта?',
-      type: 'multiselect',
-      field: 'content',
-      options: [
-        'логотип компании',
-        'качественные фотографии',
-        'готовые тексты о компании',
-        'описания товаров/услуг',
-        'отзывы клиентов',
-        'пока ничего готового нет'
-      ],
-      canSkip: true
-    },
-    {
-      id: 'features',
-      title: 'Необходимые функции сайта',
-      type: 'multiselect',
-      field: 'features',
-      options: [
-        'форма обратной связи',
-        'кнопка для быстрого звонка',
-        'интерактивная карта проезда',
-        'каталог товаров/услуг',
-        'галерея работ'
-      ],
+      options: t('brief.questions.design_style.options', { returnObjects: true }) as string[],
       canSkip: true
     },
     {
       id: 'deadline',
-      title: 'Когда нужен готовый сайт?',
+      title: t('brief.questions.timeline.title'),
       type: 'choice',
       field: 'deadline',
-      options: [
-        'вчера — очень срочно',
-        'в течение 1-2 недель',
-        'в течение месяца',
-        'в течение 2-3 месяцев',
-        'не срочно, качество важнее скорости'
-      ],
+      options: t('brief.questions.timeline.options', { returnObjects: true }) as string[],
       canSkip: true
     },
     {
       id: 'budget',
-      title: 'Планируемый бюджет на сайт',
+      title: t('brief.questions.budget_range.title'),
       type: 'choice',
       field: 'budget',
-      options: [
-        'до $500 — простой сайт-визитка',
-        '$500-1000 — функциональный сайт',
-        '$1000-2000 — профессиональный сайт',
-        '$2000+ — комплексное решение',
-        'готов обсудить после консультации'
-      ],
+      options: t('brief.questions.budget_range.options', { returnObjects: true }) as string[],
+      canSkip: true
+    },
+    {
+      id: 'contact',
+      title: t('brief.questions.contact.title'),
+      type: 'contact',
+      field: 'contact',
+      canSkip: false
+    },
+    {
+      id: 'notes',
+      title: t('brief.questions.additional_notes.title'),
+      type: 'text',
+      field: 'notes',
+      placeholder: t('brief.questions.additional_notes.placeholder'),
+      options: [],
       canSkip: true
     }
   ];
 
-  // Сценарий B: доработка существующего сайта
+  // Сценарий B: доработка существующего сайта (simplified for existing site workflow)
   const scenarioB: BriefStep[] = [
     {
-      id: 'siteUrl',
-      title: 'Ссылка на ваш текущий сайт',
+      id: 'business',
+      title: t('brief.questions.business_description.title'),
       type: 'text',
-      field: 'siteUrl',
-      placeholder: 'https://ваш-сайт.ru',
-      canSkip: false
-    },
-    {
-      id: 'remove',
-      title: 'Основные проблемы текущего сайта',
-      type: 'multiselect',
-      field: 'remove',
-      options: [
-        'устаревший дизайн',
-        'неудобно использовать на мобильных',
-        'медленно загружается',
-        'сложно найти нужную информацию',
-        'приходит мало заявок',
-        'не отображается в поиске Google',
-        'часто ломается или недоступен',
-        'нет современных функций',
-        'не соответствует бренду компании'
-      ],
+      field: 'business',
+      placeholder: t('brief.questions.business_description.placeholder'),
+      options: [],
       canSkip: true
     },
     {
-      id: 'keep',
-      title: 'Что точно нужно сохранить?',
-      type: 'multiselect',
-      field: 'keep',
-      options: [
-        'общую структуру сайта',
-        'существующий контент',
-        'цветовую схему',
-        'логотип и фирменный стиль',
-        'доменное имя',
-        'SEO позиции в поиске',
-        'интеграции с другими системами',
-        'ничего особенного'
-      ],
+      id: 'audience',
+      title: t('brief.questions.target_audience.title'),
+      type: 'text',
+      field: 'audience',
+      placeholder: t('brief.questions.target_audience.placeholder'),
+      options: [],
       canSkip: true
     },
     {
       id: 'goals',
-      title: 'Цели обновления сайта',
+      title: t('brief.questions.website_goals.title'),
       type: 'multiselect',
       field: 'goals',
-      options: [
-        'увеличить количество заявок',
-        'улучшить позиции в поиске',
-        'сделать удобным на мобильных',
-        'обновить внешний вид',
-        'ускорить загрузку',
-        'добавить новые функции',
-        'упростить управление контентом',
-        'повысить доверие клиентов'
-      ],
+      options: t('brief.questions.website_goals.options', { returnObjects: true }) as string[],
       canSkip: true
     },
     {
-      id: 'content',
-      title: 'Контент для обновленного сайта',
-      type: 'multiselect',
-      field: 'content',
-      options: [
-        'обновленный логотип',
-        'новые качественные фотографии',
-        'переписанные тексты',
-        'свежие отзывы клиентов',
-        'актуальная информация о услугах',
-        'новые сертификаты и награды',
-        'пока планируем использовать старое',
-        'нужна помощь с созданием контента'
-      ],
-      canSkip: true
-    },
-    {
-      id: 'features',
-      title: 'Дополнительные функции',
-      type: 'multiselect',
-      field: 'features',
-      options: [
-        'улучшенная форма обратной связи',
-        'онлайн чат с клиентами',
-        'кнопка для быстрого звонка',
-        'интерактивная карта',
-        'расширенный каталог',
-        'система онлайн записи',
-        'блог или новости',
-        'галерея работ',
-        'интеграция с CRM системой',
-        'аналитика и метрики',
-        'A/B тестирование'
-      ],
+      id: 'style',
+      title: t('brief.questions.design_style.title'),
+      type: 'choice',
+      field: 'style',
+      options: t('brief.questions.design_style.options', { returnObjects: true }) as string[],
       canSkip: true
     },
     {
       id: 'deadline',
-      title: 'Временные рамки проекта',
+      title: t('brief.questions.timeline.title'),
       type: 'choice',
       field: 'deadline',
-      options: [
-        'максимально быстро — за неделю',
-        'в течение месяца',
-        'в течение 2-3 месяцев',
-        'поэтапно, по мере готовности',
-        'не срочно, качество важнее'
-      ],
+      options: t('brief.questions.timeline.options', { returnObjects: true }) as string[],
       canSkip: true
     },
     {
       id: 'budget',
-      title: 'Бюджет на доработку',
+      title: t('brief.questions.budget_range.title'),
       type: 'choice',
       field: 'budget',
-      options: [
-        'до $300 — косметические изменения',
-        '$300-800 — существенные улучшения',
-        '$800-1500 — серьезная модернизация',
-        '$1500+ — полная реконструкция',
-        'зависит от объема работ'
-      ],
+      options: t('brief.questions.budget_range.options', { returnObjects: true }) as string[],
+      canSkip: true
+    },
+    {
+      id: 'contact',
+      title: t('brief.questions.contact.title'),
+      type: 'contact',
+      field: 'contact',
+      canSkip: false
+    },
+    {
+      id: 'notes',
+      title: t('brief.questions.additional_notes.title'),
+      type: 'text',
+      field: 'notes',
+      placeholder: t('brief.questions.additional_notes.placeholder'),
+      options: [],
       canSkip: true
     }
   ];
-
-  // Контакты (общий для обоих сценариев)
-  const contactStep: BriefStep = {
-    id: 'contact',
-    title: 'Как с вами связаться?',
-    type: 'contact',
-    field: 'contact',
-    canSkip: false
-  };
 
   // Определяем путь на основе выбора
   if (briefData.hasSite === null) {
@@ -261,5 +158,5 @@ export const briefSteps = (briefData: BriefData): BriefStep[] => {
   }
 
   const steps = briefData.hasSite === false ? scenarioA : scenarioB;
-  return [...steps, contactStep];
+  return steps;
 };

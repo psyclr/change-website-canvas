@@ -1,7 +1,9 @@
 import HandDrawnArrow from "@/components/ui/HandDrawnArrow";
 import { SprayLine } from "@/components/spray/SprayLine";
+import { useTranslation } from 'react-i18next';
 
 const HeroArrow = () => {
+  const { t } = useTranslation('common');
   const handleClick = () => {
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
@@ -25,9 +27,9 @@ const HeroArrow = () => {
           {/* Текст между стрелками */}
           <div className="text-center relative">
             <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
-              Мы делаем <span className="relative inline-block">
-                сайты.
-                {/* Спрайт под словом "сайты" */}
+              {t('hero.arrow_text').split(' ').slice(0, 2).join(' ')} <span className="relative inline-block">
+                {t('hero.arrow_text').split(' ').slice(2).join(' ')}
+                {/* Спрайт под последним словом */}
                 <div className="absolute top-full left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                   <div style={{ filter: 'drop-shadow(0 0 1.5px black) drop-shadow(0 0 1.5px black)' }}>
                     <SprayLine

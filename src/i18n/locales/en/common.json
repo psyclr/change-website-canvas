@@ -1,0 +1,195 @@
+{
+  "navigation": {
+    "home": "Home",
+    "process": "Process",
+    "results": "Results",
+    "brief": "Brief",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Business needs a proper <1>website</1>.",
+    "subtitle": "We create websites that actually work for your business",
+    "cta_primary": "Fill out brief",
+    "cta_secondary": "View examples",
+    "arrow_text": "We make websites.",
+    "cta_arrow_text": "Fill out brief.",
+    "view_work_text": "View our work."
+  },
+  "process": {
+    "title": "About us",
+    "subtitle": "Simple, transparent process without unnecessary complexity",
+    "step1": {
+      "title": "Who we are",
+      "description": "We decided to build websites to help small businesses be online"
+    },
+    "step2": {
+      "title": "Our team",
+      "description": "We are a small company ourselves — developer and designer"
+    },
+    "step3": {
+      "title": "Technology",
+      "description": "We use the latest technologies, so we work fast"
+    }
+  },
+  "results": {
+    "title": "Our work",
+    "subtitle": "Real websites for real businesses",
+    "portfolio": {
+      "page1": {
+        "title": "Homepage",
+        "description": "Industrial climbing services description"
+      },
+      "page2": {
+        "title": "Work Portfolio",
+        "description": "Examples of completed projects and objects"
+      },
+      "page3": {
+        "title": "Service Details",
+        "description": "Detailed work processes and technologies"
+      }
+    }
+  },
+  "brief": {
+    "title": "Interactive Brief",
+    "subtitle": "Answer questions — we'll show how your website could look. No calls, no spam.",
+    "start_button": "Start Brief",
+    "start_form": {
+      "title": "Tell us about your project",
+      "subtitle": "A few questions will help us prepare a personalized proposal",
+      "info": "Takes 3-5 minutes • We'll contact you within a day • Payment only after your project approval",
+      "optional": "All fields are optional"
+    },
+    "questions": {
+      "has_site": {
+        "title": "Do you already have a website?",
+        "options": {
+          "yes": "Yes, I have a website",
+          "no": "No, I need a new website"
+        }
+      },
+      "business_description": {
+        "title": "Tell us about your business",
+        "placeholder": "What does your company do? What products or services do you offer?"
+      },
+      "target_audience": {
+        "title": "Who is your target audience?",
+        "placeholder": "Describe your ideal customers or clients"
+      },
+      "website_goals": {
+        "title": "What should your website achieve?",
+        "options": [
+          "Generate leads and inquiries",
+          "Sell products online",
+          "Showcase portfolio/work",
+          "Provide information about services",
+          "Build brand awareness",
+          "Support existing customers"
+        ]
+      },
+      "design_style": {
+        "title": "What design style do you prefer?",
+        "options": [
+          "Modern and minimalist",
+          "Bold and creative",
+          "Corporate and professional",
+          "Fun and playful",
+          "Elegant and luxurious"
+        ]
+      },
+      "budget_range": {
+        "title": "What's your budget range?",
+        "options": [
+          "$2,000 - $5,000",
+          "$5,000 - $10,000",
+          "$10,000 - $20,000",
+          "$20,000+"
+        ]
+      },
+      "timeline": {
+        "title": "When do you need the website?",
+        "options": [
+          "ASAP (Rush job)",
+          "Within 1 month",
+          "Within 2-3 months",
+          "No specific deadline"
+        ]
+      },
+      "contact": {
+        "title": "Contact Information",
+        "name": "Full Name",
+        "name_placeholder": "John Smith",
+        "email": "Email Address", 
+        "email_placeholder": "john@company.com",
+        "phone": "Phone Number",
+        "phone_placeholder": "+1 (555) 123-4567",
+        "company": "Company Name",
+        "company_placeholder": "Your Company LLC"
+      },
+      "additional_notes": {
+        "title": "Additional Requirements",
+        "placeholder": "Any specific features, integrations, or special requirements?"
+      }
+    },
+    "navigation": {
+      "next": "Next",
+      "previous": "Previous",
+      "submit": "Submit Brief",
+      "skip": "Skip this question"
+    },
+    "completion": {
+      "title": "Thank you!",
+      "message": "We've received your brief and will contact you within 24 hours with a detailed proposal.",
+      "next_steps": "What happens next:",
+      "step1": "We'll analyze your requirements",
+      "step2": "Create a detailed proposal with timeline and pricing",
+      "step3": "Schedule a call to discuss the project"
+    },
+    "preview": {
+      "title": "Website Preview",
+      "company_name": "Company Name",
+      "your_business": "Your Business",
+      "services_description": "Service Description",
+      "for_audience": "For",
+      "order_service": "Order Service",
+      "services": "Services",
+      "service": "Service",
+      "our_work": "Our Work",
+      "find_us": "Find Us",
+      "map": "Map",
+      "contacts": "Contacts",
+      "call": "Call",
+      "leave_request": "Leave Request",
+      "deadline": "Deadline",
+      "budget": "Budget"
+    }
+  },
+  "footer": {
+    "company_description": "Making websites for people who just need them to work.",
+    "contact_title": "Contact",
+    "services_title": "Services", 
+    "follow_title": "Follow us",
+    "services": {
+      "new_website": "Website from scratch",
+      "fix_website": "Fix your old site", 
+      "support": "Simple updates & support"
+    },
+    "contact": {
+      "email": "hello@change.studio",
+      "phone": "+1 (555) 123-4567",
+      "address": "123 Main Street, Portland, OR 97204"
+    },
+    "copyright": "© {{year}} Change. All rights reserved."
+  },
+  "language_switcher": {
+    "current_language": "English",
+    "select_language": "Select Language"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "try_again": "Try again",
+    "required_field": "This field is required",
+    "invalid_email": "Please enter a valid email address",
+    "invalid_phone": "Please enter a valid phone number"
+  }
+}

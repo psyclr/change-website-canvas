@@ -4,15 +4,18 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SprayLine } from "@/components/spray/SprayLine";
 import { cn } from "@/lib/utils";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useTranslation('common');
 
   const navigationLinks = [
-    { href: "#services", label: "Услуги" },
-    { href: "#process", label: "Процесс" },
-    { href: "#work", label: "Работы" },
-    { href: "#contact", label: "Контакты" }
+    { href: "#services", label: t('navigation.home') },
+    { href: "#process", label: t('navigation.process') },
+    { href: "#work", label: t('navigation.results') },
+    { href: "#contact", label: t('navigation.contact') }
   ];
 
   const quickActions = [
@@ -59,13 +62,16 @@ const Header = () => {
             ))}
           </nav>
           
+          {/* Language Switcher */}
+          <LanguageSwitcher />
+          
           {/* CTA Button */}
           <Button 
             asChild 
             className="btn-primary focus-ring ml-4"
           >
-            <a href="#get-started">
-              Получить демо
+            <a href="#brief">
+              {t('hero.cta_primary')}
             </a>
           </Button>
         </div>
@@ -116,6 +122,11 @@ const Header = () => {
               ))}
             </nav>
 
+            {/* Language Switcher Mobile */}
+            <div className="mb-6">
+              <LanguageSwitcher />
+            </div>
+
             {/* Mobile CTA */}
             <div className="mb-8">
               <Button 
@@ -123,8 +134,8 @@ const Header = () => {
                 className="btn-primary w-full focus-ring"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <a href="#get-started">
-                  Получить демо
+                <a href="#brief">
+                  {t('hero.cta_primary')}
                 </a>
               </Button>
             </div>
