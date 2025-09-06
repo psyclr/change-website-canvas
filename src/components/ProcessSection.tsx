@@ -21,11 +21,11 @@ const ProcessSection: React.FC = () => {
           </div>
 
           {/* Стикеры с информацией */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 relative px-4 sm:px-0">
             
             {/* Стикер 1 */}
             <div className="flex justify-center">
-              <Sticker rotation={-3} className="max-w-xs">
+              <Sticker rotation={-3} className="w-full max-w-xs mx-auto">
                 <div className="text-center">
                   <div className="mb-3 font-bold text-xl">{t('process.step1.title')}</div>
                   <div>{t('process.step1.description')}</div>
@@ -35,7 +35,7 @@ const ProcessSection: React.FC = () => {
 
             {/* Стикер 2 */}
             <div className="flex justify-center">
-              <Sticker rotation={2} className="max-w-xs">
+              <Sticker rotation={2} className="w-full max-w-xs mx-auto">
                 <div className="text-center">
                   <div className="mb-3 font-bold text-xl">{t('process.step2.title')}</div>
                   <div>{t('process.step2.description')}</div>
@@ -44,8 +44,8 @@ const ProcessSection: React.FC = () => {
             </div>
 
             {/* Стикер 3 */}
-            <div className="flex justify-center md:col-span-2 lg:col-span-1">
-              <Sticker rotation={-1} className="max-w-xs">
+            <div className="flex justify-center sm:col-span-2 lg:col-span-1">
+              <Sticker rotation={-1} className="w-full max-w-xs mx-auto">
                 <div className="text-center">
                   <div className="mb-3 font-bold text-xl">{t('process.step3.title')}</div>
                   <div>{t('process.step3.description')}</div>

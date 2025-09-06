@@ -101,8 +101,8 @@ const InteractiveBrief: React.FC = () => {
 
   if (!isStarted) {
     return (
-      <div className="max-w-3xl mx-auto">
-        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-muted">
+      <div className="max-w-3xl mx-auto px-4 sm:px-0">
+        <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm border border-muted">
           <div className="text-center mb-6">
             <h3 className="text-xl md:text-2xl font-heading font-medium mb-3 text-fg">
               {t('brief.start_form.title')}
@@ -149,8 +149,8 @@ const InteractiveBrief: React.FC = () => {
   // Success screen after submission - компактная версия
   if (isSubmitted) {
     return (
-      <div className="max-w-xl mx-auto text-center">
-        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-muted">
+      <div className="max-w-xl mx-auto text-center px-4 sm:px-0">
+        <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm border border-muted">
           <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -194,7 +194,7 @@ const InteractiveBrief: React.FC = () => {
   const currentStepData = steps[currentStep];
 
   return (
-    <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+    <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 max-w-6xl mx-auto px-4 sm:px-0">
       {/* Левая колонка - вопросы */}
       <div className="order-2 lg:order-1">
         <BriefStepComponent

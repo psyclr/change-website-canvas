@@ -49,14 +49,14 @@ const ImageModal: React.FC<ImageModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-2 sm:p-4"
       onClick={handleBackdropClick}
     >
-      <div className="relative max-w-4xl max-h-[90vh] w-full bg-white rounded-2xl overflow-hidden shadow-2xl animate-fade-in">
+      <div className="relative max-w-4xl max-h-[95vh] sm:max-h-[90vh] w-full bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl animate-fade-in">
         {/* Кнопка закрытия */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white rounded-full p-2 transition-colors duration-200 shadow-lg"
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 bg-white/90 hover:bg-white rounded-full p-2 transition-colors duration-200 shadow-lg"
         >
           <X className="h-5 w-5 text-gray-700" />
         </button>
@@ -66,14 +66,14 @@ const ImageModal: React.FC<ImageModalProps> = ({
           <img
             src={imageSrc}
             alt={imageAlt}
-            className="w-full h-auto max-h-[70vh] object-contain"
+            className="w-full h-auto max-h-[60vh] sm:max-h-[70vh] object-contain"
           />
         </div>
 
         {/* Описание */}
-        <div className="p-6 bg-white">
-          <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
-          <p className="text-gray-600 leading-relaxed">{description}</p>
+        <div className="p-4 sm:p-6 bg-white">
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{title}</h3>
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{description}</p>
         </div>
       </div>
     </div>

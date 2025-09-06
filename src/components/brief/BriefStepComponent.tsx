@@ -60,7 +60,7 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
     switch (step.type) {
       case 'choice':
         return (
-          <div className="space-y-3">
+          <div className="space-y-3 min-h-[200px] flex flex-col justify-center">
             {step.options?.map((option) => (
               <button
                 key={option}
@@ -76,8 +76,8 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
       case 'multiselect':
         const selectedValues = getFieldValue() as string[] || [];
         return (
-          <div className="space-y-4">
-            <div className="space-y-3">
+          <div className="space-y-4 min-h-[200px] flex flex-col">
+            <div className="space-y-3 flex-1">
               {step.options?.map((option) => (
                 <button
                   key={option}
@@ -107,7 +107,7 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
 
       case 'text':
         return (
-          <div className="space-y-4">
+          <div className="space-y-4 min-h-[200px] flex flex-col">
             {step.options && (
               <div className="flex flex-wrap gap-2 mb-4">
                 {step.options.map((option) => (
@@ -125,7 +125,7 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
               value={localValue}
               onChange={(e) => setLocalValue(e.target.value)}
               placeholder={step.placeholder}
-              className="min-h-[100px]"
+              className="min-h-[100px] flex-1"
             />
             <Button 
               onClick={handleTextSubmit} 
@@ -139,30 +139,32 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
 
       case 'contact':
         return (
-          <div className="space-y-4">
-            <Input
-              value={briefData.contact.name}
-              onChange={(e) => onAnswer('contact', { ...briefData.contact, name: e.target.value })}
-              placeholder={t('brief.questions.contact.name_placeholder')}
-            />
-            <Input
-              type="email"
-              value={briefData.contact.email}
-              onChange={(e) => onAnswer('contact', { ...briefData.contact, email: e.target.value })}
-              placeholder={t('brief.questions.contact.email_placeholder')}
-            />
-            <Input
-              type="tel"
-              value={briefData.contact.phone}
-              onChange={(e) => onAnswer('contact', { ...briefData.contact, phone: e.target.value })}
-              placeholder={t('brief.questions.contact.phone_placeholder')}
-            />
-            <Textarea
-              value={briefData.notes}
-              onChange={(e) => onAnswer('notes', e.target.value)}
-              placeholder={t('brief.questions.additional_notes.placeholder')}
-              className="min-h-[80px]"
-            />
+          <div className="space-y-4 min-h-[200px] flex flex-col">
+            <div className="space-y-4 flex-1">
+              <Input
+                value={briefData.contact.name}
+                onChange={(e) => onAnswer('contact', { ...briefData.contact, name: e.target.value })}
+                placeholder={t('brief.questions.contact.name_placeholder')}
+              />
+              <Input
+                type="email"
+                value={briefData.contact.email}
+                onChange={(e) => onAnswer('contact', { ...briefData.contact, email: e.target.value })}
+                placeholder={t('brief.questions.contact.email_placeholder')}
+              />
+              <Input
+                type="tel"
+                value={briefData.contact.phone}
+                onChange={(e) => onAnswer('contact', { ...briefData.contact, phone: e.target.value })}
+                placeholder={t('brief.questions.contact.phone_placeholder')}
+              />
+              <Textarea
+                value={briefData.notes}
+                onChange={(e) => onAnswer('notes', e.target.value)}
+                placeholder={t('brief.questions.additional_notes.placeholder')}
+                className="min-h-[80px]"
+              />
+            </div>
             <Button 
               onClick={handleContactSubmit} 
               className="btn-primary w-full"
@@ -191,7 +193,7 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm border border-muted">
+    <div className="bg-white rounded-xl p-6 shadow-sm border border-muted min-h-[500px] flex flex-col">
       {/* Прогресс */}
       <div className="mb-6">
         <div className="w-full bg-muted-2 rounded-full h-1">
@@ -208,13 +210,13 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
       </h3>
 
       {/* Контент */}
-      <div className="mb-6">
+      <div className="mb-6 flex-1">
         {renderInput()}
       </div>
 
       {/* Кнопка пропуска */}
       {step.canSkip && (
-        <div className="text-center">
+        <div className="text-center mt-auto">
           <button
             onClick={onSkip}
             className="text-fg/60 hover:text-fg text-sm flex items-center justify-center mx-auto transition-colors"
