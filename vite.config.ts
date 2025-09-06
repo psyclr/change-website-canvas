@@ -22,28 +22,15 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Optimize for GitHub Pages - no eval()
+    // Optimize for GitHub Pages
     outDir: 'dist',
     sourcemap: false,
-    minify: 'terser',
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
         },
-      },
-    },
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-      mangle: {
-        eval: false, // Prevent eval generation
-      },
-      format: {
-        comments: false,
       },
     },
   },
