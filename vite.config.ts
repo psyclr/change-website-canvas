@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Optimize for GitHub Pages
+    // Optimize for GitHub Pages - no eval()
     outDir: 'dist',
     sourcemap: false,
     minify: 'terser',
@@ -37,6 +37,13 @@ export default defineConfig(({ mode }) => ({
     terserOptions: {
       compress: {
         drop_console: true,
+        drop_debugger: true,
+      },
+      mangle: {
+        eval: false, // Prevent eval generation
+      },
+      format: {
+        comments: false,
       },
     },
   },
