@@ -100,10 +100,10 @@
       "budget_range": {
         "title": "What's your budget range?",
         "options": [
-          "$2,000 - $5,000",
-          "$5,000 - $10,000",
-          "$10,000 - $20,000",
-          "$20,000+"
+          "$500 - $1,000",
+          "$1,000 - $2,000",
+          "$2,000 - $4,000",
+          "$4,000+"
         ]
       },
       "timeline": {
@@ -194,7 +194,7 @@
     "tiers": {
       "starter": {
         "name": "Starter",
-        "price": "2 200",
+        "price": "650",
         "description": "Perfect for small businesses",
         "feature1": "Responsive website (5-7 pages)",
         "feature2": "Contact form",
@@ -204,7 +204,7 @@
       },
       "business": {
         "name": "Business",
-        "price": "4 200",
+        "price": "1 150",
         "description": "For growing companies",
         "feature1": "Everything from Starter",
         "feature2": "Responsive website (10-15 pages)",
@@ -215,7 +215,7 @@
       },
       "professional": {
         "name": "Professional",
-        "price": "7 200",
+        "price": "2 200",
         "description": "For demanding projects",
         "feature1": "Everything from Business",
         "feature2": "Unlimited number of pages",
@@ -227,7 +227,7 @@
       },
       "enterprise": {
         "name": "Enterprise",
-        "price": "From 12 500",
+        "price": "From 3 900",
         "description": "Custom solutions",
         "feature1": "Full solution tailored to your needs",
         "feature2": "Dedicated project team",

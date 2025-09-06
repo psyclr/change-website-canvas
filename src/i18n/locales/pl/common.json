@@ -100,10 +100,10 @@
       "budget_range": {
         "title": "Jaki jest Twój budżet?",
         "options": [
-          "8,000 - 20,000 zł",
-          "20,000 - 40,000 zł",
-          "40,000 - 80,000 zł",
-          "Powyżej 80,000 zł"
+          "2,000 - 4,000 zł",
+          "4,000 - 8,000 zł",
+          "8,000 - 15,000 zł",
+          "Powyżej 15,000 zł"
         ]
       },
       "timeline": {
@@ -194,7 +194,7 @@
     "tiers": {
       "starter": {
         "name": "Starter",
-        "price": "8 900",
+        "price": "2 500",
         "description": "Idealne dla małych firm",
         "feature1": "Responsywna strona (5-7 podstron)",
         "feature2": "Formularz kontaktowy",
@@ -204,7 +204,7 @@
       },
       "business": {
         "name": "Business",
-        "price": "16 900",
+        "price": "4 500",
         "description": "Dla rozwijających się firm",
         "feature1": "Wszystko z pakietu Starter",
         "feature2": "Responsywna strona (10-15 podstron)", 
@@ -215,7 +215,7 @@
       },
       "professional": {
         "name": "Professional",
-        "price": "28 900",
+        "price": "8 500",
         "description": "Dla wymagających projektów",
         "feature1": "Wszystko z pakietu Business",
         "feature2": "Nielimitowana liczba podstron",
@@ -227,7 +227,7 @@
       },
       "enterprise": {
         "name": "Enterprise",
-        "price": "Od 50 000",
+        "price": "Od 15 000",
         "description": "Rozwiązania na miarę",
         "feature1": "Pełne rozwiązanie dostosowane do potrzeb",
         "feature2": "Dedykowany zespół projektowy",
