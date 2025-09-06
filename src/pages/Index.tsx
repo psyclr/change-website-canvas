@@ -7,6 +7,7 @@ import AboutArrow from "@/components/AboutArrow";
 import ResultsSection from "@/components/ResultsSection";
 import ResultsArrow from "@/components/ResultsArrow";
 import BriefSection from "@/components/BriefSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import GlobalGraffitiLine from "@/components/GlobalGraffitiLine";
 
@@ -32,6 +33,10 @@ const Index = () => {
         </div>
         <div style={{scrollSnapAlign: 'start'}} className="h-screen flex flex-col">
           <BriefSection />
+        </div>
+        <div style={{scrollSnapAlign: 'start'}} className="min-h-screen flex flex-col">
+          <ContactSection />
+          <Footer />
         </div>
       </main>
     </div>
