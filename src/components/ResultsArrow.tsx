@@ -10,7 +10,7 @@ const ResultsArrow = () => {
   };
 
   return (
-    <div className="container-wide -mt-48">
+    <div className="container-wide -mt-16">
       <div className="max-w-4xl mx-auto">
         <button 
           onClick={handleClick}
@@ -24,7 +24,7 @@ const ResultsArrow = () => {
           
           {/* Текст между стрелками */}
           <div className="text-center relative">
-            <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-black">
               Заполните <span className="relative inline-block">
                 бриф.
                 {/* Спрайт под словом "бриф" */}

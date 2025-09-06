@@ -34,7 +34,7 @@ export interface BriefStep {
 export interface BriefStepComponentProps {
   step: BriefStep;
   briefData: BriefData;
-  onAnswer: (key: string, value: any) => void;
+  onAnswer: (key: string, value: any, callback?: () => void) => void;
   onNext: () => void;
   onSkip: () => void;
   currentStep: number;

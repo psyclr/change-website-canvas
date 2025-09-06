@@ -5,16 +5,16 @@ import { Mail, MapPin, Phone, Globe, Wrench, HeadphonesIcon } from 'lucide-react
 
 const BriefSection: React.FC = () => {
   return (
-    <SectionContainer variant="light" id="brief" className="flex-1 flex flex-col">
-      {/* Основной контент брифа */}
-      <div className="flex-1 pt-16 md:pt-24">
-        <div className="w-full">
-          {/* Заголовок и описание секции - вынесены над карточкой */}
-          <div className="text-center mb-8 md:mb-12 relative z-20">
-            <h2 className="text-3xl md:text-4xl font-heading font-medium mb-6 text-fg">
+    <SectionContainer variant="light" id="brief" className="flex flex-col">
+      {/* Основной контент брифа - компактная версия */}
+      <div className="flex-1 pt-8 md:pt-12">
+        <div className="w-full max-w-6xl mx-auto">
+          {/* Заголовок и описание секции - компактные отступы */}
+          <div className="text-center mb-4 md:mb-6 relative z-20">
+            <h2 className="text-2xl md:text-3xl font-heading font-medium mb-3 text-fg">
               Интерактивный бриф
             </h2>
-            <p className="text-lg text-fg/70 max-w-2xl mx-auto mb-8">
+            <p className="text-base text-fg/70 max-w-2xl mx-auto mb-4">
               Ответьте на вопросы — покажем, как может выглядеть ваш сайт. Без звонков и без спама.
             </p>
           </div>

@@ -18,12 +18,11 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
   const [localValue, setLocalValue] = useState<any>('');
 
   const handleChoice = (option: string) => {
-    if (step.field === 'hasSite') {
-      onAnswer(step.field, option === 'Нет, нужен новый сайт' ? false : true);
-    } else {
-      onAnswer(step.field, option);
-    }
-    setTimeout(onNext, 300); // Небольшая задержка для плавности
+    const value = step.field === 'hasSite' 
+      ? option === 'Нет, нужен новый сайт' ? false : true
+      : option;
+    
+    onAnswer(step.field, value, onNext);
   };
 
   const handleMultiSelect = (option: string) => {
