@@ -16,9 +16,9 @@ const ResultsSection: React.FC = () => {
       description: 'Profesjonalny sайт компании альпинистских услуг. Современный дизайн, портфолио работ и подробное описание услуг для корпоративных клиентов.',
       url: 'https://max-tempo.com',
       screenshots: [
-        '/portfolio/maxtempo-homepage.jpg',
-        '/portfolio/maxtempo-portfolio.jpg', 
-        '/portfolio/maxtempo-services.jpg'
+        './portfolio/maxtempo-homepage.jpg',
+        './portfolio/maxtempo-portfolio.jpg', 
+        './portfolio/maxtempo-services.jpg'
       ],
       screenshotLabels: [
         'Главная страница с hero-секцией',
