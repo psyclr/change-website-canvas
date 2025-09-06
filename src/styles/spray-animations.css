@@ -1,0 +1,173 @@
+/* Spray-line animations and effects */
+
+@keyframes spray-draw {
+  0% {
+    stroke-dashoffset: 100%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes spray-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Base spray line styles */
+.spray-line-container {
+  display: inline-block;
+  position: relative;
+  will-change: transform;
+}
+
+.spray-svg {
+  display: block;
+  overflow: visible;
+}
+
+/* Spray line elements */
+.spray-main {
+  transition: stroke-width 0.2s ease, opacity 0.2s ease;
+}
+
+.spray-overspray {
+  transition: stroke-width 0.2s ease, opacity 0.2s ease;
+}
+
+.spray-halo {
+  transition: opacity 0.2s ease;
+}
+
+/* Animation classes */
+.spray-animated {
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+/* Type-specific styles */
+.spray-main .spray-svg {
+  filter: drop-shadow(0 0 2px rgba(var(--accent-rgb), 0.3));
+}
+
+.spray-micro .spray-svg {
+  filter: drop-shadow(0 0 1px rgba(var(--accent-rgb), 0.2));
+}
+
+.spray-underline .spray-svg {
+  filter: drop-shadow(0 1px 2px rgba(var(--accent-rgb), 0.25));
+}
+
+/* Dark section adjustments */
+.spray-dark .spray-main {
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.15));
+}
+
+.spray-dark .spray-overspray {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.1));
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .spray-animated {
+    animation: none !important;
+  }
+  
+  .spray-main,
+  .spray-overspray,
+  .spray-halo {
+    transition: none !important;
+  }
+  
+  .spray-line-container {
+    will-change: auto;
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 640px) {
+  .spray-svg {
+    filter: none; /* Remove expensive filters on mobile */
+  }
+  
+  .spray-main .spray-svg,
+  .spray-micro .spray-svg,
+  .spray-underline .spray-svg {
+    filter: none;
+  }
+  
+  .spray-dark .spray-main,
+  .spray-dark .spray-overspray {
+    filter: none;
+  }
+}
+
+/* Hover effects for interactive elements */
+.spray-interactive:hover .spray-main {
+  stroke-width: calc(var(--spray-thickness) * 1.1);
+  opacity: 0.9;
+}
+
+.spray-interactive:hover .spray-overspray {
+  opacity: calc(var(--spray-overspray-opacity) * 1.2);
+}
+
+/* Specialized component styles */
+
+/* SprayUnderline */
+.spray-underline-wrapper {
+  position: relative;
+}
+
+.spray-underline-line {
+  pointer-events: none;
+  z-index: -1;
+}
+
+.spray-underline-line .spray-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* SprayMarker */
+.spray-marker {
+  z-index: 10;
+}
+
+.spray-marker-line {
+  display: block;
+}
+
+/* Halo effects for dark sections */
+.spray-halo-outer,
+.spray-halo-inner {
+  transition: opacity 0.3s ease;
+}
+
+/* Animation delays for layered effects */
+.spray-overspray.spray-animated {
+  animation-delay: 0ms;
+}
+
+.spray-main.spray-animated {
+  animation-delay: 50ms;
+}
+
+.spray-halo-inner.spray-animated {
+  animation-delay: 25ms;
+}
+
+.spray-halo-outer.spray-animated {
+  animation-delay: 0ms;
+}

@@ -3,7 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="py-32 bg-white">
+    <footer id="contact" className="pt-48 pb-32 bg-white">
       <div className="container-wide">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16">
           <div>

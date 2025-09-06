@@ -1,64 +1,56 @@
+import React from 'react';
+import SectionContainer from '@/components/layout/SectionContainer';
+import Sticker from '@/components/ui/Sticker';
 
-import { Leaf, Sparkles, Zap } from "lucide-react";
-import { motion } from "framer-motion";
-
-const ProcessSection = () => {
+const ProcessSection: React.FC = () => {
   return (
-    <section id="process" className="section-spacing bg-white overflow-hidden">
-      <div className="container-wide relative">
-        {/* Decorative background elements */}
-        <div className="absolute top-40 right-0 w-64 h-64 bg-primary/5 rounded-full -z-10 blur-3xl"></div>
-        <div className="absolute bottom-20 left-0 w-72 h-72 bg-[#FEC6A1]/20 rounded-full -z-10 blur-3xl"></div>
-        
-        <div className="max-w-3xl mx-auto mb-24">
-          <h2 className="text-3xl md:text-4xl font-display mb-8 font-light">How we work</h2>
-          <p className="text-lg text-foreground/70 leading-relaxed">
-            A simple process that puts you first.
-          </p>
-        </div>
-        
-        <div className="max-w-3xl mx-auto space-y-32 relative">
-          {/* Connected line through timeline */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary/10 via-primary/20 to-transparent"></div>
-          
-          <div className="timeline-item group">
-            <div className="flex mb-6">
-              <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-[#F2FCE2] flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-sm">
-                <Sparkles className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-display ml-6 font-light self-center">1. Talk</h3>
-            </div>
-            <p className="text-foreground/70 leading-relaxed pl-24">
-              You tell us what you want (or what you don't like about your current site). We listen.
-            </p>
+    <SectionContainer variant="light" id="about" className="min-h-screen flex items-center justify-center py-20">
+      <div className="container-wide">
+        <div className="max-w-6xl mx-auto">
+          {/* Заголовок секции */}
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-4xl font-heading font-medium mb-6">
+              О нас
+            </h2>
           </div>
-          
-          <div className="timeline-item group">
-            <div className="flex mb-6">
-              <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-[#FFDEE2]/50 flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-sm">
-                <Zap className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-display ml-6 font-light self-center">2. Build</h3>
+
+          {/* Стикеры с информацией */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+            
+            {/* Стикер 1 */}
+            <div className="flex justify-center">
+              <Sticker rotation={-3} className="max-w-xs">
+                <div className="text-center">
+                  <div className="mb-3 font-bold text-xl">Кто мы?</div>
+                  <div>Мы решили делать сайты, чтобы помочь маленьким фирмам быть в интернете</div>
+                </div>
+              </Sticker>
             </div>
-            <p className="text-foreground/70 leading-relaxed pl-24">
-              We design and create your site. You see progress. We adjust along the way.
-            </p>
-          </div>
-          
-          <div className="timeline-item group">
-            <div className="flex mb-6">
-              <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-[#D3E4FD] flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-sm">
-                <Leaf className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-display ml-6 font-light self-center">3. Launch</h3>
+
+            {/* Стикер 2 */}
+            <div className="flex justify-center">
+              <Sticker rotation={2} className="max-w-xs">
+                <div className="text-center">
+                  <div className="mb-3 font-bold text-xl">Команда</div>
+                  <div>Мы сами маленькая фирма — разработчик и дизайнер</div>
+                </div>
+              </Sticker>
             </div>
-            <p className="text-foreground/70 leading-relaxed pl-24">
-              Your site goes live. You get a short guide, and we stay in touch if you need us.
-            </p>
+
+            {/* Стикер 3 */}
+            <div className="flex justify-center md:col-span-2 lg:col-span-1">
+              <Sticker rotation={-1} className="max-w-xs">
+                <div className="text-center">
+                  <div className="mb-3 font-bold text-xl">Технологии</div>
+                  <div>Мы используем новейшие технологии, поэтому работаем быстро</div>
+                </div>
+              </Sticker>
+            </div>
+
           </div>
         </div>
       </div>
-    </section>
+    </SectionContainer>
   );
 };
 

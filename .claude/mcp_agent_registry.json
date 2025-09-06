@@ -1,0 +1,181 @@
+{
+  "project_id": "change-website-canvas",
+  "project_name": "Change Website Canvas",
+  "agent_registry": {
+    "task-manager": {
+      "role": "Central Dispatcher and Coordinator",
+      "capabilities": [
+        "task analysis",
+        "agent selection", 
+        "workflow orchestration",
+        "project planning",
+        "dependency management",
+        "progress tracking",
+        "quality assurance",
+        "multi-agent coordination"
+      ],
+      "domains": ["coordination", "planning", "dispatching", "project management"],
+      "keywords": ["task", "coordination", "planning", "workflow", "dispatch", "management", "orchestration"],
+      "always_required": true,
+      "selection_logic": "Receives ALL non-trivial tasks from Primary Agent",
+      "priority": "critical"
+    },
+    "frontend-specialist": {
+      "role": "React/TypeScript UI development specialist",
+      "capabilities": [
+        "React component architecture",
+        "TypeScript implementation",
+        "State management (Context, hooks)",
+        "Responsive design",
+        "Tailwind CSS optimization",
+        "Modern React patterns",
+        "Performance optimization",
+        "Accessibility implementation"
+      ],
+      "domains": ["frontend", "react", "ui development", "typescript"],
+      "keywords": ["react", "typescript", "components", "ui", "tailwind", "responsive", "hooks", "jsx", "tsx", "frontend"]
+    },
+    "ux-interaction-designer": {
+      "role": "User experience and interaction design specialist",
+      "capabilities": [
+        "Brief flow optimization",
+        "Conversion rate improvement",
+        "User journey mapping",
+        "A/B testing design",
+        "Interaction patterns",
+        "Usability analysis",
+        "User research integration",
+        "Design system implementation"
+      ],
+      "domains": ["user experience", "interaction design", "conversion optimization", "usability"],
+      "keywords": ["ux", "conversion", "brief", "flow", "interaction", "usability", "journey", "design", "user", "experience"]
+    },
+    "ai-integration-engineer": {
+      "role": "AI API integration and conversational interface specialist", 
+      "capabilities": [
+        "OpenAI/Claude API integration",
+        "Dynamic questioning logic",
+        "NLP processing",
+        "Conversation memory management",
+        "AI prompt engineering",
+        "Real-time AI interactions",
+        "Context management",
+        "API optimization"
+      ],
+      "domains": ["artificial intelligence", "api integration", "conversational interfaces", "nlp"],
+      "keywords": ["ai", "openai", "claude", "nlp", "conversation", "dynamic", "api", "chatbot", "integration", "llm", "gpt"]
+    },
+    "form-optimization-specialist": {
+      "role": "Form design and conversion optimization specialist",
+      "capabilities": [
+        "Multi-step form logic",
+        "Validation patterns",
+        "Completion rate optimization", 
+        "Lead qualification systems",
+        "Progressive disclosure",
+        "Error handling UX",
+        "Form analytics",
+        "Conversion funnel optimization"
+      ],
+      "domains": ["form optimization", "conversion", "lead generation", "validation"],
+      "keywords": ["forms", "validation", "conversion", "lead", "optimization", "qualification", "steps", "brief", "multi-step"]
+    },
+    "animation-motion-designer": {
+      "role": "Animation and micro-interaction specialist",
+      "capabilities": [
+        "Framer Motion implementations",
+        "Scroll-triggered animations",
+        "Page transitions",
+        "Visual feedback systems",
+        "Micro-interactions",
+        "Performance-optimized animations",
+        "Gesture handling",
+        "Interactive storytelling"
+      ],
+      "domains": ["animation", "motion design", "visual effects", "interactions"],
+      "keywords": ["animation", "framer-motion", "transitions", "scroll", "microinteractions", "visual", "effects", "motion", "gesture"]
+    },
+    "performance-optimization-engineer": {
+      "role": "Frontend performance and bundle optimization specialist",
+      "capabilities": [
+        "Vite optimization",
+        "Code splitting strategies",
+        "Lazy loading implementation",
+        "Web Vitals improvement",
+        "Bundle analysis",
+        "Runtime performance optimization",
+        "Memory leak prevention",
+        "Loading performance"
+      ],
+      "domains": ["performance optimization", "build optimization", "web vitals"],
+      "keywords": ["performance", "optimization", "vite", "bundling", "vitals", "loading", "metrics", "build", "splitting", "lazy"]
+    },
+    "embedding-integration-specialist": {
+      "role": "Embeddable widget and third-party integration specialist",
+      "capabilities": [
+        "Widget architecture design",
+        "Iframe security implementation",
+        "Cross-domain communication",
+        "Plugin development",
+        "SDK creation",
+        "Embedding strategies",
+        "Third-party integrations",
+        "Sandboxing techniques"
+      ],
+      "domains": ["widget development", "third-party integration", "embedding"],
+      "keywords": ["embedding", "widget", "iframe", "plugin", "integration", "cross-domain", "sdk", "embeddable", "sandbox"]
+    },
+    "landing-page-optimizer": {
+      "role": "Landing page conversion and SEO specialist", 
+      "capabilities": [
+        "Page structure optimization",
+        "Scroll behavior implementation",
+        "CTA placement optimization",
+        "Analytics integration",
+        "SEO implementation",
+        "Conversion tracking",
+        "A/B testing setup",
+        "Performance monitoring"
+      ],
+      "domains": ["landing page optimization", "seo", "conversion", "analytics"],
+      "keywords": ["landing", "seo", "conversion", "cta", "analytics", "structure", "scroll", "optimization", "tracking"]
+    }
+  },
+  "project_context": {
+    "project_type": "React/TypeScript Landing Page with Interactive Brief System",
+    "architecture": "Frontend SPA with Future AI Agent Integration",
+    "current_phase": "Active development with AI integration planning",
+    "technology_stack": {
+      "build_tool": "Vite",
+      "framework": "React 18",
+      "language": "TypeScript",
+      "ui_library": "shadcn/ui",
+      "styling": "Tailwind CSS",
+      "package_manager": "npm"
+    },
+    "key_features": [
+      "Interactive brief generation system",
+      "Multi-step form workflows",
+      "AI-powered questioning logic",
+      "Conversion-optimized landing pages",
+      "Responsive design system",
+      "Performance-optimized delivery"
+    ],
+    "development_standards": {
+      "architecture_pattern": "Component-based with hooks",
+      "testing_approach": "TDD with React Testing Library",
+      "code_quality": "ESLint + Prettier + TypeScript strict mode",
+      "styling": "Tailwind CSS with custom design system",
+      "performance": "Core Web Vitals optimization"
+    }
+  },
+  "coordination_system": {
+    "dispatch_flow": "Primary Agent → @task-manager → Specialist Agent",
+    "queue_namespace": "coordination:queue:change-website-canvas",
+    "status_tracking": "agent:status:{agent_name}",
+    "knowledge_sharing": "agent:knowledge:{agent_name}",
+    "project_memory": "project:context:change-website-canvas"
+  },
+  "created_at": "2025-09-04T20:00:00Z",
+  "version": "1.0"
+}

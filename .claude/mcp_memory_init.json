@@ -1,0 +1,199 @@
+{
+  "memory_initialization": {
+    "project_id": "change-website-canvas",
+    "namespaces": {
+      "agent:registry": {
+        "description": "Centralized agent capabilities registry",
+        "data": "reference:mcp_agent_registry.json#agent_registry"
+      },
+      "project:context:change-website-canvas": {
+        "description": "Shared project state and architecture",
+        "data": {
+          "project_name": "Change Website Canvas",
+          "architecture": "Frontend SPA with Future AI Agent Integration",
+          "current_phase": "Active development with AI integration planning",
+          "technology_stack": {
+            "build_tool": "Vite",
+            "framework": "React 18",
+            "language": "TypeScript",
+            "ui_library": "shadcn/ui",
+            "styling": "Tailwind CSS"
+          },
+          "key_components": [
+            "InteractiveBrief system",
+            "Multi-step forms",
+            "AI integration layer",
+            "Landing page optimization",
+            "Conversion tracking"
+          ],
+          "active_branch": "main",
+          "last_update": "2025-09-04T20:00:00Z"
+        }
+      },
+      "coordination:queue:change-website-canvas": {
+        "description": "Inter-agent communication queue",
+        "data": []
+      },
+      "session:context": {
+        "description": "Current session state and preferences", 
+        "data": {
+          "project": "change-website-canvas",
+          "session_start": "2025-09-04T20:00:00Z",
+          "active_agents": ["task-manager"],
+          "user_preferences": {
+            "development_approach": "TDD with React Testing Library",
+            "code_quality": "High - ESLint + Prettier + TypeScript strict",
+            "performance_priority": "Core Web Vitals optimization"
+          }
+        }
+      }
+    },
+    "agent_status_templates": {
+      "task-manager": {
+        "namespace": "agent:status:task-manager",
+        "template": {
+          "active": false,
+          "current_task": null,
+          "locked_resources": [],
+          "queue_length": 0,
+          "last_activity": null,
+          "coordination_mode": "dispatcher"
+        }
+      },
+      "frontend-specialist": {
+        "namespace": "agent:status:frontend-specialist",
+        "template": {
+          "active": false,
+          "current_task": null,
+          "locked_files": [],
+          "react_context": null,
+          "component_focus": null,
+          "last_activity": null
+        }
+      },
+      "ux-interaction-designer": {
+        "namespace": "agent:status:ux-interaction-designer", 
+        "template": {
+          "active": false,
+          "current_task": null,
+          "flow_analysis": null,
+          "conversion_metrics": null,
+          "user_journey_stage": null,
+          "last_activity": null
+        }
+      },
+      "ai-integration-engineer": {
+        "namespace": "agent:status:ai-integration-engineer",
+        "template": {
+          "active": false,
+          "current_task": null,
+          "api_connections": [],
+          "conversation_contexts": [],
+          "integration_status": null,
+          "last_activity": null
+        }
+      },
+      "form-optimization-specialist": {
+        "namespace": "agent:status:form-optimization-specialist",
+        "template": {
+          "active": false,
+          "current_task": null,
+          "form_components": [],
+          "validation_rules": [],
+          "conversion_tracking": null,
+          "last_activity": null
+        }
+      },
+      "animation-motion-designer": {
+        "namespace": "agent:status:animation-motion-designer",
+        "template": {
+          "active": false,
+          "current_task": null,
+          "animation_library": "framer-motion",
+          "active_animations": [],
+          "performance_budget": null,
+          "last_activity": null
+        }
+      },
+      "performance-optimization-engineer": {
+        "namespace": "agent:status:performance-optimization-engineer",
+        "template": {
+          "active": false,
+          "current_task": null,
+          "metrics_tracking": [],
+          "optimization_targets": [],
+          "bundle_analysis": null,
+          "last_activity": null
+        }
+      },
+      "embedding-integration-specialist": {
+        "namespace": "agent:status:embedding-integration-specialist",
+        "template": {
+          "active": false,
+          "current_task": null,
+          "widget_contexts": [],
+          "security_implementations": [],
+          "integration_status": null,
+          "last_activity": null
+        }
+      },
+      "landing-page-optimizer": {
+        "namespace": "agent:status:landing-page-optimizer",
+        "template": {
+          "active": false,
+          "current_task": null,
+          "page_sections": [],
+          "conversion_tracking": [],
+          "seo_status": null,
+          "last_activity": null
+        }
+      }
+    },
+    "knowledge_base_templates": {
+      "task-manager": {
+        "namespace": "agent:knowledge:task-manager",
+        "template": {
+          "task_patterns": {},
+          "agent_performance": {},
+          "coordination_history": [],
+          "optimization_insights": []
+        }
+      },
+      "frontend-specialist": {
+        "namespace": "agent:knowledge:frontend-specialist",
+        "template": {
+          "component_patterns": {},
+          "react_best_practices": [],
+          "performance_optimizations": [],
+          "typescript_configurations": {}
+        }
+      },
+      "ux-interaction-designer": {
+        "namespace": "agent:knowledge:ux-interaction-designer",
+        "template": {
+          "conversion_insights": {},
+          "user_behavior_patterns": [],
+          "a_b_test_results": [],
+          "journey_optimizations": []
+        }
+      },
+      "ai-integration-engineer": {
+        "namespace": "agent:knowledge:ai-integration-engineer",
+        "template": {
+          "api_configurations": {},
+          "prompt_engineering": [],
+          "conversation_patterns": [],
+          "integration_challenges": []
+        }
+      }
+    }
+  },
+  "initialization_commands": [
+    "Load agent registry into MCP Memory",
+    "Initialize all agent status tracking",
+    "Set up coordination queue system", 
+    "Establish project context persistence",
+    "Configure knowledge sharing templates"
+  ],
+  "created_at": "2025-09-04T20:00:00Z"
+}
