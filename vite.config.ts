@@ -25,12 +25,18 @@ export default defineConfig(({ mode }) => ({
     // Optimize for GitHub Pages
     outDir: 'dist',
     sourcemap: false,
+    minify: 'terser',
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
         },
+      },
+    },
+    terserOptions: {
+      compress: {
+        drop_console: true,
       },
     },
   },
