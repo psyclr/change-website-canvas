@@ -6,6 +6,7 @@ import ProcessSection from "@/components/ProcessSection";
 import AboutArrow from "@/components/AboutArrow";
 import ResultsSection from "@/components/ResultsSection";
 import ResultsArrow from "@/components/ResultsArrow";
+import PricingSection from "@/components/PricingSection";
 import BriefSection from "@/components/BriefSection";
 import GlobalGraffitiLine from "@/components/GlobalGraffitiLine";
 import { Mail, MapPin, Phone, Globe, Wrench, HeadphonesIcon } from 'lucide-react';
@@ -34,6 +35,9 @@ const Index = () => {
         <div style={{scrollSnapAlign: 'start'}}>
           <ResultsSection />
           <ResultsArrow />
+        </div>
+        <div style={{scrollSnapAlign: 'start'}}>
+          <PricingSection />
         </div>
         <div style={{scrollSnapAlign: 'start'}} className="flex flex-col">
           <BriefSection />

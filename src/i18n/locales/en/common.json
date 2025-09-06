@@ -3,6 +3,7 @@
     "home": "Home",
     "process": "Process",
     "results": "Results",
+    "pricing": "Pricing",
     "brief": "Brief",
     "contact": "Contact"
   },
@@ -183,6 +184,76 @@
   "language_switcher": {
     "current_language": "English",
     "select_language": "Select Language"
+  },
+  "pricing": {
+    "title": "Transparent Pricing",
+    "subtitle": "Choose the perfect package for your business. No hidden costs, no surprises.",
+    "guarantee": "Payment only after project approval",
+    "popular": "Most Popular",
+    "additional_info": "All packages include free consultation and graphic design",
+    "tiers": {
+      "starter": {
+        "name": "Starter",
+        "price": "2 200",
+        "description": "Perfect for small businesses",
+        "feature1": "Responsive website (5-7 pages)",
+        "feature2": "Contact form",
+        "feature3": "Basic SEO",
+        "feature4": "1 year hosting included",
+        "feature5": "2 months technical support"
+      },
+      "business": {
+        "name": "Business",
+        "price": "4 200",
+        "description": "For growing companies",
+        "feature1": "Everything from Starter",
+        "feature2": "Responsive website (10-15 pages)",
+        "feature3": "Advanced SEO + Google Analytics",
+        "feature4": "Blog/news section",
+        "feature5": "Social media integration",
+        "feature6": "6 months technical support"
+      },
+      "professional": {
+        "name": "Professional",
+        "price": "7 200",
+        "description": "For demanding projects",
+        "feature1": "Everything from Business",
+        "feature2": "Unlimited number of pages",
+        "feature3": "E-commerce (up to 100 products)",
+        "feature4": "Advanced forms",
+        "feature5": "Admin panel",
+        "feature6": "External systems integration",
+        "feature7": "12 months technical support"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "From 12 500",
+        "description": "Custom solutions",
+        "feature1": "Full solution tailored to your needs",
+        "feature2": "Dedicated project team",
+        "feature3": "Advanced API integrations",
+        "feature4": "Custom management panel",
+        "feature5": "Unlimited technical support"
+      }
+    },
+    "cta": {
+      "order": "Order Now",
+      "consult": "Get Consultation"
+    },
+    "benefits": {
+      "guarantee": {
+        "title": "Quality Guarantee",
+        "description": "You pay only after approving the finished website"
+      },
+      "support": {
+        "title": "Technical Support",
+        "description": "Help included in every package for specified period"
+      },
+      "payment": {
+        "title": "Flexible Payments",
+        "description": "Option to split payment into installments"
+      }
+    }
   },
   "common": {
     "loading": "Loading...",
