@@ -8,10 +8,11 @@
     <meta name="description" content="We make normal websites for people who just want things to work. No noise, no pushy marketing — just clear, good websites that reflect what your business really is." />
     <meta name="author" content="Change" />
     
-    <!-- Fonts -->
+    <!-- Fonts - Non-blocking loading for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"></noscript>
 
     <meta property="og:title" content="Change | Websites that just work" />
     <meta property="og:description" content="We make normal websites for people who just want things to work." />
