@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import SectionContainer from '@/components/layout/SectionContainer';
-import InteractiveBrief from '@/components/brief/InteractiveBrief';
 import { useTranslation } from 'react-i18next';
+
+// Lazy load the InteractiveBrief component and its heavy dependencies
+const InteractiveBrief = lazy(() => import('@/components/brief/InteractiveBrief'));
 
 const BriefSection: React.FC = () => {
   const { t } = useTranslation('common');
@@ -21,7 +23,16 @@ const BriefSection: React.FC = () => {
             </p>
           </div>
 
-          <InteractiveBrief />
+          <Suspense fallback={
+            <div className="min-h-[300px] flex items-center justify-center">
+              <div className="text-center space-y-2">
+                <div className="animate-spin h-8 w-8 border-2 border-primary border-t-transparent rounded-full mx-auto"></div>
+                <div className="text-foreground/50 text-sm">Loading brief form...</div>
+              </div>
+            </div>
+          }>
+            <InteractiveBrief />
+          </Suspense>
         </div>
       </div>
 

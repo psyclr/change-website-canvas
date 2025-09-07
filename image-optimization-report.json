@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-09-07T19:05:54.075Z",
+  "images_found": 3,
+  "total_current_size": "1.8MB",
+  "estimated_webp_savings": "~70%",
+  "estimated_avif_savings": "~76%",
+  "lighthouse_impact": "Significant improvement in image optimization scores",
+  "files": {
+    "maxtempo-homepage.jpg": {
+      "original": "1164KB",
+      "webp_estimated": "~350KB (-70%)",
+      "avif_estimated": "~280KB (-76%)",
+      "resize_recommendation": "Consider resizing to max 1200px width"
+    },
+    "maxtempo-portfolio.jpg": {
+      "original": "540KB",
+      "webp_estimated": "~160KB (-70%)",
+      "avif_estimated": "~130KB (-76%)",
+      "resize_recommendation": "Consider resizing to max 800px width"
+    },
+    "maxtempo-services.jpg": {
+      "original": "96KB",
+      "webp_estimated": "~29KB (-70%)",
+      "avif_estimated": "~23KB (-76%)",
+      "resize_recommendation": "Size looks optimal"
+    }
+  }
+}
