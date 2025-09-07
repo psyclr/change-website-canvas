@@ -190,7 +190,19 @@
     "subtitle": "Wybierz pakiet idealny dla Twojego biznesu. Bez ukrytych kosztów, bez niespodzianek.",
     "guarantee": "Płatność dopiero po zatwierdzeniu projektu",
     "popular": "Najpopularniejszy",
+    "recommended": "Najlepsza wartość",
     "additional_info": "Wszystkie pakiety zawierają darmową konsultację i projekt graficzny",
+    "savings": {
+      "business": "Oszczędność 800zł vs osobne usługi"
+    },
+    "social_proof": {
+      "clients": "zadowolonych klientów",
+      "rating": "średnia ocena",
+      "satisfaction": "poziom zadowolenia"
+    },
+    "urgency": {
+      "limited_time": "Oferta ograniczona czasowo"
+    },
     "tiers": {
       "starter": {
         "name": "Starter",
@@ -234,6 +246,40 @@
         "feature3": "Zaawansowane integracje API",
         "feature4": "Panel zarządzania na miarę",
         "feature5": "Wsparcie techniczne bez ograniczeń"
+      },
+      "start": {
+        "name": "Start",
+        "price": "600",
+        "originalPrice": "2 000",
+        "description": "Idealne dla małych firm rozpoczynających obecność online",
+        "feature1": "Responsywna strona (do 7 podstron)",
+        "feature2": "Formularz kontaktowy",
+        "feature3": "Podstawowe SEO",
+        "feature4": "Hosting na 1 rok w cenie",
+        "feature5": "2 miesiące wsparcia technicznego"
+      },
+      "standard": {
+        "name": "Standard",
+        "price": "3 500",
+        "description": "Idealny dla rozwijających się firm",
+        "feature1": "Wszystko z pakietu Start",
+        "feature2": "Responsywna strona (do 15 podstron)",
+        "feature3": "Zaawansowane SEO + Google Analytics",
+        "feature4": "Blog/aktualności",
+        "feature5": "Integracja z social media",
+        "feature6": "6 miesięcy wsparcia technicznego"
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "6 000",
+        "description": "Rozwiązanie premium dla wymagających projektów",
+        "feature1": "Wszystko z pakietu Standard",
+        "feature2": "Nieograniczona liczba podstron",
+        "feature3": "E-commerce (do 100 produktów)",
+        "feature4": "Zaawansowane formularze",
+        "feature5": "Panel administracyjny",
+        "feature6": "Integracja z systemami zewnętrznymi",
+        "feature7": "12 miesięcy wsparcia technicznego"
       }
     },
     "cta": {
@@ -252,6 +298,39 @@
       "payment": {
         "title": "Elastyczne płatności",
         "description": "Możliwość rozłożenia płatności na raty"
+      }
+    },
+    "comparison": {
+      "title": "Szczegółowe porównanie funkcji",
+      "show_detailed": "Pokaż szczegółowe porównanie",
+      "hide": "Ukryj porównanie",
+      "features": "Funkcje",
+      "unlimited": "Bez ograniczeń",
+      "basic": "Podstawowe",
+      "advanced": "Zaawansowane",
+      "custom": "Indywidualne",
+      "up_to_100": "Do 100 produktów",
+      "months": "mies.",
+      "categories": {
+        "basic": "Podstawowe funkcje",
+        "marketing": "Marketing i analityka",
+        "content": "Zarządzanie treścią",
+        "ecommerce": "Sklep internetowy",
+        "management": "Zarządzanie",
+        "integrations": "Integracje",
+        "support": "Wsparcie"
+      },
+      "features": {
+        "pages": "Liczba podstron",
+        "responsive_design": "Responsywny design",
+        "contact_form": "Formularze kontaktowe",
+        "seo_optimization": "Optymalizacja SEO",
+        "analytics": "Google Analytics",
+        "blog_news": "Blog/Aktualności",
+        "ecommerce": "Funkcje sklepu internetowego",
+        "admin_panel": "Panel administracyjny",
+        "api_integrations": "Integracje API",
+        "support_duration": "Wsparcie techniczne"
       }
     }
   },

@@ -190,7 +190,19 @@
     "subtitle": "Choose the perfect package for your business. No hidden costs, no surprises.",
     "guarantee": "Payment only after project approval",
     "popular": "Most Popular",
+    "recommended": "Best Value",
     "additional_info": "All packages include free consultation and graphic design",
+    "savings": {
+      "business": "Save $200 vs separate services"
+    },
+    "social_proof": {
+      "clients": "happy clients",
+      "rating": "average rating",
+      "satisfaction": "satisfaction rate"
+    },
+    "urgency": {
+      "limited_time": "Limited time offer"
+    },
     "tiers": {
       "starter": {
         "name": "Starter",
@@ -252,6 +264,39 @@
       "payment": {
         "title": "Flexible Payments",
         "description": "Option to split payment into installments"
+      }
+    },
+    "comparison": {
+      "title": "Detailed Feature Comparison",
+      "show_detailed": "Show detailed comparison",
+      "hide": "Hide comparison",
+      "features": "Features",
+      "unlimited": "Unlimited",
+      "basic": "Basic",
+      "advanced": "Advanced",
+      "custom": "Custom",
+      "up_to_100": "Up to 100 products",
+      "months": "months",
+      "categories": {
+        "basic": "Basic Features",
+        "marketing": "Marketing & Analytics",
+        "content": "Content Management",
+        "ecommerce": "E-commerce",
+        "management": "Management",
+        "integrations": "Integrations",
+        "support": "Support"
+      },
+      "features": {
+        "pages": "Number of pages",
+        "responsive_design": "Responsive design",
+        "contact_form": "Contact forms",
+        "seo_optimization": "SEO optimization",
+        "analytics": "Google Analytics",
+        "blog_news": "Blog/News section",
+        "ecommerce": "E-commerce functionality",
+        "admin_panel": "Admin panel",
+        "api_integrations": "API integrations",
+        "support_duration": "Technical support"
       }
     }
   },
