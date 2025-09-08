@@ -214,8 +214,7 @@
         "feature2": "Widoczność w Google od pierwszego dnia.",
         "feature3": "Przyciski kontaktu (telefon, e-mail, WhatsApp).",
         "feature4": "Podłączona analityka ruchu odwiedzających.",
-        "feature5": "Domena, hosting i cała konfiguracja — na nas.",
-        "bonus": "✦ Szybki start bez zbędnych trosk."
+        "feature5": "Domena, hosting i cała konfiguracja — na nas."
       },
       "standard": {
         "name": "Standard",
@@ -225,8 +224,7 @@
         "feature2": "Wygodna nawigacja i linki, żeby klient się nie gubił.",
         "feature3": "Piękne podglądy dla mediów społecznościowych.",
         "feature4": "Szablony dla nowych usług lub FAQ.",
-        "feature5": "Domena i hosting w pełni włączone.",
-        "bonus": "✦ Strona, która budzi zaufanie i prezentuje cały biznes."
+        "feature5": "Domena i hosting w pełni włączone."
       },
       "pro": {
         "name": "Pro",
@@ -242,11 +240,20 @@
     },
     "promo": {
       "new_client_discount": "Promocja dla nowych klientów: -70% na Start (landing) → 600 PLN jednorazowo",
-      "limitations": "Ograniczenia: 1 domena, 1 runda poprawek, bez indywidualnych ilustracji/sesji zdjęciowych (można dokupić)"
+      "limitations": "Ograniczenia: 1 domena, 1 runda poprawek, bez indywidualnych ilustracji/sesji zdjęciowych (można dokupić)",
+      "discount_badge": "-70% dla nowych klientów"
+    },
+    "expand": {
+      "need_more": "Nужno что-то серьёзнее?",
+      "hide_options": "Скрыć дополнительные опции"
     },
     "cta": {
       "order": "Zamów teraz",
       "consult": "Skonsultuj się"
+    },
+    "cta_section": {
+      "title": "Opowiedz nam o swoim projekcie",
+      "subtitle": "Kilka pytań pomoże nam przygotować spersonalizowaną ofertę"
     },
     "benefits": {
       "guarantee": {

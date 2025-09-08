@@ -214,8 +214,7 @@
         "feature2": "Visibility in Google from day one.",
         "feature3": "Contact buttons (call, email, WhatsApp).",
         "feature4": "Connected visitor analytics tracking.",
-        "feature5": "Domain, hosting and all setup — on us.",
-        "bonus": "✦ Quick start without unnecessary worries."
+        "feature5": "Domain, hosting and all setup — on us."
       },
       "standard": {
         "name": "Standard",
@@ -225,8 +224,7 @@
         "feature2": "Convenient navigation and links, so customers don't get lost.",
         "feature3": "Beautiful previews for social media.",
         "feature4": "Templates for new services or FAQ.",
-        "feature5": "Domain and hosting fully included.",
-        "bonus": "✦ A website that inspires trust and presents the entire business."
+        "feature5": "Domain and hosting fully included."
       },
       "pro": {
         "name": "Pro",
@@ -236,17 +234,25 @@
         "feature2": "Two languages (e.g., PL and EN) for entering new markets.",
         "feature3": "Automatic quality checks (speed, errors, links).",
         "feature4": "Extended information for Google (services, FAQ, articles).",
-        "feature5": "All technical issues (domain, hosting, SSL) we handle.",
-        "bonus": "✦ A website that attracts customers and works for your image."
+        "feature5": "All technical issues (domain, hosting, SSL) we handle."
       }
     },
     "promo": {
       "new_client_discount": "Promo for new clients: -70% on Start (landing) → 600 PLN one-time",
-      "limitations": "Limitations: 1 domain, 1 round of edits, no custom illustrations/photo sessions (can be purchased separately)"
+      "limitations": "Limitations: 1 domain, 1 round of edits, no custom illustrations/photo sessions (can be purchased separately)",
+      "discount_badge": "-70% for new clients"
+    },
+    "expand": {
+      "need_more": "Need something more serious?",
+      "hide_options": "Hide additional options"
     },
     "cta": {
       "order": "Order Now",
       "consult": "Get Consultation"
+    },
+    "cta_section": {
+      "title": "Tell us about your project",
+      "subtitle": "A few questions will help us prepare a personalized proposal"
     },
     "benefits": {
       "guarantee": {

@@ -66,8 +66,7 @@ const packages: PricingPackage[] = [
       'pricing.tiers.standard.feature2', // Responsive website (10-15 pages)
       'pricing.tiers.standard.feature3', // Advanced SEO + Google Analytics
       'pricing.tiers.standard.feature4', // Blog/news functionality
-      'pricing.tiers.standard.feature5', // Social media integration
-      'pricing.tiers.standard.feature6'  // 6 months technical support
+      'pricing.tiers.standard.feature5'  // Social media integration
     ],
     limits: {
       projects: 3,
@@ -100,9 +99,7 @@ const packages: PricingPackage[] = [
       'pricing.tiers.pro.feature2', // Unlimited pages
       'pricing.tiers.pro.feature3', // E-commerce (up to 100 products)
       'pricing.tiers.pro.feature4', // Advanced forms and functionality
-      'pricing.tiers.pro.feature5', // Administrative panel
-      'pricing.tiers.pro.feature6', // External system integrations
-      'pricing.tiers.pro.feature7'  // 12 months technical support
+      'pricing.tiers.pro.feature5'  // Administrative panel
     ],
     limits: {
       projects: 10,
