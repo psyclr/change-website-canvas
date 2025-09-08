@@ -186,8 +186,8 @@
     "select_language": "Wybierz język"
   },
   "pricing": {
-    "title": "Przejrzyste ceny",
-    "subtitle": "Wybierz pakiet idealny dla Twojego biznesu. Bez ukrytych kosztów, bez niespodzianek.",
+    "title": "Cennik",
+    "subtitle": "Pakiety dla małego biznesu i jednoosobowych działalności gospodarczych",
     "guarantee": "Płatność dopiero po zatwierdzeniu projektu",
     "popular": "Najpopularniejszy",
     "recommended": "Najlepsza wartość",
@@ -204,83 +204,48 @@
       "limited_time": "Oferta ograniczona czasowo"
     },
     "tiers": {
-      "starter": {
-        "name": "Starter",
-        "price": "2 500",
-        "description": "Idealne dla małych firm",
-        "feature1": "Responsywna strona (5-7 podstron)",
-        "feature2": "Formularz kontaktowy",
-        "feature3": "Podstawowe SEO",
-        "feature4": "Hosting na 1 rok w cenie",
-        "feature5": "2 miesiące wsparcia technicznego"
-      },
-      "business": {
-        "name": "Business",
-        "price": "4 500",
-        "description": "Dla rozwijających się firm",
-        "feature1": "Wszystko z pakietu Starter",
-        "feature2": "Responsywna strona (10-15 podstron)", 
-        "feature3": "Zaawansowane SEO + Google Analytics",
-        "feature4": "Blog/aktualności",
-        "feature5": "Integracja z social media",
-        "feature6": "6 miesięcy wsparcia technicznego"
-      },
-      "professional": {
-        "name": "Professional",
-        "price": "8 500",
-        "description": "Dla wymagających projektów",
-        "feature1": "Wszystko z pakietu Business",
-        "feature2": "Nielimitowana liczba podstron",
-        "feature3": "E-commerce (do 100 produktów)",
-        "feature4": "Zaawansowane formularze",
-        "feature5": "Panel administracyjny",
-        "feature6": "Integracja z systemami zewnętrznymi",
-        "feature7": "12 miesięcy wsparcia technicznego"
-      },
-      "enterprise": {
-        "name": "Enterprise",
-        "price": "Od 15 000",
-        "description": "Rozwiązania na miarę",
-        "feature1": "Pełne rozwiązanie dostosowane do potrzeb",
-        "feature2": "Dedykowany zespół projektowy",
-        "feature3": "Zaawansowane integracje API",
-        "feature4": "Panel zarządzania na miarę",
-        "feature5": "Wsparcie techniczne bez ograniczeń"
-      },
       "start": {
         "name": "Start",
-        "price": "600",
+        "price": "2 000",
         "originalPrice": "2 000",
-        "description": "Idealne dla małych firm rozpoczynających obecność online",
-        "feature1": "Responsywna strona (do 7 podstron)",
-        "feature2": "Formularz kontaktowy",
-        "feature3": "Podstawowe SEO",
-        "feature4": "Hosting na 1 rok w cenie",
-        "feature5": "2 miesiące wsparcia technicznego"
+        "promoPrice": "600",
+        "description": "Landing (1-3 sekcje) — Na szybki start usługi/oferty",
+        "feature1": "Vite + React + Tailwind, schludny firmowy design blokowy",
+        "feature2": "Podstawy SEO (SSG/prerender, unikalne title/description, canonical, Open Graph)",
+        "feature3": "Adaptacja mobilna, Core Web Vitals ≥ wartości docelowych",
+        "feature4": "Formularze/przyciski kontaktowe (tel/mail/WhatsApp)",
+        "feature5": "Podstawowa analityka (GA4), podłączenie Search Console",
+        "timeframe": "5-7 dni roboczych",
+        "support": "100 PLN/mies (opcjonalnie)"
       },
       "standard": {
         "name": "Standard",
         "price": "3 500",
-        "description": "Idealny dla rozwijających się firm",
-        "feature1": "Wszystko z pakietu Start",
-        "feature2": "Responsywna strona (do 15 podstron)",
-        "feature3": "Zaawansowane SEO + Google Analytics",
-        "feature4": "Blog/aktualności",
-        "feature5": "Integracja z social media",
-        "feature6": "6 miesięcy wsparcia technicznego"
+        "description": "Strona-wizytówka (do 5 stron) — Dla firm z kilkoma usługami/stronami",
+        "feature1": "Wszystko z Start plus:",
+        "feature2": "Do 5 statycznych stron (Główna, Usługi, Realizacje/Opinie, O nas, Kontakt)",
+        "feature3": "Breadcrumby, rozszerzona linkologia",
+        "feature4": "Generowanie OG-obrazków pod strony",
+        "feature5": "Podstawowe szablony dla nowych stron (PageService/PageFaq)",
+        "timeframe": "10-15 dni roboczych",
+        "support": "150 PLN/mies (opcjonalnie)"
       },
       "pro": {
         "name": "Pro",
         "price": "6 000",
-        "description": "Rozwiązanie premium dla wymagających projektów",
-        "feature1": "Wszystko z pakietu Standard",
-        "feature2": "Nieograniczona liczba podstron",
-        "feature3": "E-commerce (do 100 produktów)",
-        "feature4": "Zaawansowane formularze",
-        "feature5": "Panel administracyjny",
-        "feature6": "Integracja z systemami zewnętrznymi",
-        "feature7": "12 miesięcy wsparcia technicznego"
+        "description": "Korporacyjny (do 12 stron) — Dla firm, którym potrzebny zapas pod rozwój",
+        "feature1": "Wszystko z Standard plus:",
+        "feature2": "Do 12 stron, w tym Blog/Aktualności (SSG), szablony Article/FAQ",
+        "feature3": "Wielojęzyczność (2 języki) z poprawnym hreflang-setterem",
+        "feature4": "Audyty CI (Lighthouse, link-checker, walidator JSON-LD) z progami",
+        "feature5": "Rozszerzone schematy (Organization/LocalBusiness/Article/FAQ/Breadcrumb)",
+        "timeframe": "15-25 dni roboczych",
+        "support": "200 PLN/mies (opcjonalnie)"
       }
+    },
+    "promo": {
+      "new_client_discount": "Promocja dla nowych klientów: -70% na Start (landing) → 600 PLN jednorazowo",
+      "limitations": "Ograniczenia: 1 domena, 1 runda poprawek, bez indywidualnych ilustracji/sesji zdjęciowych (można dokupić)"
     },
     "cta": {
       "order": "Zamów teraz",

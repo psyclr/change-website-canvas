@@ -186,8 +186,8 @@
     "select_language": "Select Language"
   },
   "pricing": {
-    "title": "Transparent Pricing",
-    "subtitle": "Choose the perfect package for your business. No hidden costs, no surprises.",
+    "title": "Pricing",
+    "subtitle": "Packages for small businesses and individual entrepreneurs",
     "guarantee": "Payment only after project approval",
     "popular": "Most Popular",
     "recommended": "Best Value",
@@ -204,49 +204,48 @@
       "limited_time": "Limited time offer"
     },
     "tiers": {
-      "starter": {
-        "name": "Starter",
-        "price": "650",
-        "description": "Perfect for small businesses",
-        "feature1": "Responsive website (5-7 pages)",
-        "feature2": "Contact form",
-        "feature3": "Basic SEO",
-        "feature4": "1 year hosting included",
-        "feature5": "2 months technical support"
+      "start": {
+        "name": "Start",
+        "price": "2,000",
+        "originalPrice": "2,000",
+        "promoPrice": "600",
+        "description": "Landing (1-3 sections) — For quick launch of services/offers",
+        "feature1": "Vite + React + Tailwind, clean branded block design",
+        "feature2": "SEO basics (SSG/prerender, unique titles/descriptions, canonical, Open Graph)",
+        "feature3": "Mobile adaptation, Core Web Vitals ≥ target values",
+        "feature4": "Contact forms/buttons (tel/mail/WhatsApp)",
+        "feature5": "Basic analytics (GA4), Search Console connection",
+        "timeframe": "5-7 business days",
+        "support": "100 PLN/month (optional)"
       },
-      "business": {
-        "name": "Business",
-        "price": "1 150",
-        "description": "For growing companies",
-        "feature1": "Everything from Starter",
-        "feature2": "Responsive website (10-15 pages)",
-        "feature3": "Advanced SEO + Google Analytics",
-        "feature4": "Blog/news section",
-        "feature5": "Social media integration",
-        "feature6": "6 months technical support"
+      "standard": {
+        "name": "Standard",
+        "price": "3,500",
+        "description": "Business card site (up to 5 pages) — For companies with multiple services/pages",
+        "feature1": "Everything from Start plus:",
+        "feature2": "Up to 5 static pages (Home, Services, Cases/Reviews, About, Contacts)",
+        "feature3": "Breadcrumbs, extended cross-linking",
+        "feature4": "OG image generation for pages",
+        "feature5": "Basic templates for new pages (PageService/PageFaq)",
+        "timeframe": "10-15 business days",
+        "support": "150 PLN/month (optional)"
       },
-      "professional": {
-        "name": "Professional",
-        "price": "2 200",
-        "description": "For demanding projects",
-        "feature1": "Everything from Business",
-        "feature2": "Unlimited number of pages",
-        "feature3": "E-commerce (up to 100 products)",
-        "feature4": "Advanced forms",
-        "feature5": "Admin panel",
-        "feature6": "External systems integration",
-        "feature7": "12 months technical support"
-      },
-      "enterprise": {
-        "name": "Enterprise",
-        "price": "From 3 900",
-        "description": "Custom solutions",
-        "feature1": "Full solution tailored to your needs",
-        "feature2": "Dedicated project team",
-        "feature3": "Advanced API integrations",
-        "feature4": "Custom management panel",
-        "feature5": "Unlimited technical support"
+      "pro": {
+        "name": "Pro",
+        "price": "6,000",
+        "description": "Corporate (up to 12 pages) — For companies that need room to grow",
+        "feature1": "Everything from Standard plus:",
+        "feature2": "Up to 12 pages, including Blog/News (SSG), Article/FAQ templates",
+        "feature3": "Multilingual (2 languages) with correct hreflang setup",
+        "feature4": "CI audits (Lighthouse, link checker, JSON-LD validator) with thresholds",
+        "feature5": "Extended schemas (Organization/LocalBusiness/Article/FAQ/Breadcrumb)",
+        "timeframe": "15-25 business days",
+        "support": "200 PLN/month (optional)"
       }
+    },
+    "promo": {
+      "new_client_discount": "Promo for new clients: -70% on Start (landing) → 600 PLN one-time",
+      "limitations": "Limitations: 1 domain, 1 round of edits, no custom illustrations/photo sessions (can be purchased separately)"
     },
     "cta": {
       "order": "Order Now",
