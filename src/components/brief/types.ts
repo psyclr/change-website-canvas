@@ -37,6 +37,7 @@ export interface BriefStepComponentProps {
   onAnswer: (key: string, value: any, callback?: () => void) => void;
   onNext: () => void;
   onSkip: () => void;
+  onBack: () => void;
   currentStep: number;
   totalSteps: number;
   isSubmitting?: boolean;

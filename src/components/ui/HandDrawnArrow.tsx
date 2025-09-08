@@ -17,15 +17,15 @@ const HandDrawnArrow: React.FC<HandDrawnArrowProps> = ({ onClick, className = ""
     >
       <svg
         width="60"
-        height="100"
-        viewBox="0 0 60 100"
+        height="115"
+        viewBox="0 0 60 115"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="drop-shadow-sm"
       >
         {/* Простая изогнутая линия стрелки */}
         <path
-          d="M30 10 C32 20, 28 30, 30 40 C32 50, 28 60, 30 70"
+          d="M30 10 C32 20, 28 30, 30 40 C32 50, 28 60, 30 85"
           stroke="#3B82F6"
           strokeWidth="6"
           strokeLinecap="round"
@@ -35,7 +35,7 @@ const HandDrawnArrow: React.FC<HandDrawnArrowProps> = ({ onClick, className = ""
         
         {/* Простой широкий наконечник */}
         <path
-          d="M20 60 L30 80 L40 60"
+          d="M20 75 L30 95 L40 75"
           stroke="#3B82F6"
           strokeWidth="6"
           strokeLinecap="round"

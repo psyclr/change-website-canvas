@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 const InteractiveBrief: React.FC = () => {
   const { t } = useTranslation('common');
-  const [isStarted, setIsStarted] = useState(false);
+  const [isStarted, setIsStarted] = useState(true);
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -54,18 +54,41 @@ const InteractiveBrief: React.FC = () => {
   useEffect(() => {
     if (shouldAutoNext) {
       setShouldAutoNext(false);
-      setTimeout(handleNext, 100); // Небольшая задержка для плавности
+      // При выборе hasSite переходим к первому шагу сценария
+      if (briefData.hasSite !== null) {
+        setCurrentStep(0);
+      } else {
+        setTimeout(handleNext, 100); // Небольшая задержка для плавности
+      }
     }
   }, [briefData, shouldAutoNext]);
 
+
   const handleNext = () => {
     const steps = briefSteps(briefData, t);
-    console.log('Current step:', currentStep, 'Total steps:', steps.length, 'Brief data hasSite:', briefData.hasSite);
+    
+    // Если мы на начальном вопросе и выбрали путь, переходим к первому шагу сценария
+    if (briefData.hasSite === null && currentStep === 0) {
+      // Это начальный переход, ждем пока hasSite изменится
+      return;
+    }
+    
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
       // Финальный экран
       handleSubmit();
+    }
+  };
+
+  const handleBack = () => {
+    // Если мы в сценарии (hasSite уже выбран) и на первом шаге сценария
+    if (briefData.hasSite !== null && currentStep === 0) {
+      // Возвращаемся к начальному выбору
+      setBriefData(prev => ({ ...prev, hasSite: null }));
+    } else if (currentStep > 0) {
+      // Обычный переход назад внутри сценария
+      setCurrentStep(currentStep - 1);
     }
   };
 
@@ -77,9 +100,6 @@ const InteractiveBrief: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      // Симуляция отправки данных
-      console.log('Submitting brief data:', briefData);
-      
       // TODO: Implement actual API call
       // const response = await fetch('/api/brief', {
       //   method: 'POST',
@@ -130,6 +150,7 @@ const InteractiveBrief: React.FC = () => {
           <div className="text-center">
             <button
               onClick={handleStart}
+              data-start-brief
               className="btn-primary text-lg px-8 py-3 inline-flex items-center"
             >
               {t('brief.start_button')}
@@ -203,6 +224,7 @@ const InteractiveBrief: React.FC = () => {
           onAnswer={handleAnswer}
           onNext={handleNext}
           onSkip={handleSkip}
+          onBack={handleBack}
           currentStep={currentStep}
           totalSteps={steps.length}
           isSubmitting={isSubmitting}

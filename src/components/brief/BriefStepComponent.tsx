@@ -3,7 +3,7 @@ import { BriefStepComponentProps } from './types';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { ArrowRight, SkipForward } from 'lucide-react';
+import { ArrowRight, SkipForward, ArrowLeft } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
@@ -12,6 +12,7 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
   onAnswer,
   onNext,
   onSkip,
+  onBack,
   currentStep,
   totalSteps,
   isSubmitting = false
@@ -60,7 +61,7 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
     switch (step.type) {
       case 'choice':
         return (
-          <div className="space-y-3 min-h-[200px] flex flex-col justify-center">
+          <div className="space-y-3 h-[300px] flex flex-col justify-center">
             {step.options?.map((option) => (
               <button
                 key={option}
@@ -76,8 +77,8 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
       case 'multiselect':
         const selectedValues = getFieldValue() as string[] || [];
         return (
-          <div className="space-y-4 min-h-[200px] flex flex-col">
-            <div className="space-y-3 flex-1">
+          <div className="space-y-4 h-[300px] flex flex-col">
+            <div className="space-y-3 flex-1 overflow-y-auto">
               {step.options?.map((option) => (
                 <button
                   key={option}
@@ -107,9 +108,9 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
 
       case 'text':
         return (
-          <div className="space-y-4 min-h-[200px] flex flex-col">
+          <div className="space-y-4 h-[300px] flex flex-col">
             {step.options && (
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2">
                 {step.options.map((option) => (
                   <button
                     key={option}
@@ -125,7 +126,7 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
               value={localValue}
               onChange={(e) => setLocalValue(e.target.value)}
               placeholder={step.placeholder}
-              className="min-h-[100px] flex-1"
+              className="flex-1 resize-none"
             />
             <Button 
               onClick={handleTextSubmit} 
@@ -139,8 +140,8 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
 
       case 'contact':
         return (
-          <div className="space-y-4 min-h-[200px] flex flex-col">
-            <div className="space-y-4 flex-1">
+          <div className="space-y-4 h-[300px] flex flex-col">
+            <div className="space-y-4 flex-1 overflow-y-auto">
               <Input
                 value={briefData.contact.name}
                 onChange={(e) => onAnswer('contact', { ...briefData.contact, name: e.target.value })}
@@ -162,7 +163,7 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
                 value={briefData.notes}
                 onChange={(e) => onAnswer('notes', e.target.value)}
                 placeholder={t('brief.questions.additional_notes.placeholder')}
-                className="min-h-[80px]"
+                className="min-h-[80px] resize-none"
               />
             </div>
             <Button 
@@ -193,7 +194,7 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-sm border border-muted min-h-[500px] flex flex-col">
+    <div className="bg-white rounded-xl p-6 shadow-sm border border-muted h-[600px] flex flex-col">
       {/* Прогресс */}
       <div className="mb-6">
         <div className="w-full bg-muted-2 rounded-full h-1">
@@ -214,18 +215,33 @@ const BriefStepComponent: React.FC<BriefStepComponentProps> = ({
         {renderInput()}
       </div>
 
-      {/* Кнопка пропуска */}
-      {step.canSkip && (
-        <div className="text-center mt-auto">
+      {/* Навигация */}
+      <div className="flex justify-between items-center mt-auto">
+        {/* Кнопка назад слева - показываем если есть куда возвращаться */}
+        {(currentStep > 0 || (currentStep === 0 && briefData.hasSite !== null)) && (
+          <button
+            onClick={onBack}
+            className="text-fg/60 hover:text-fg text-sm flex items-center transition-colors"
+          >
+            <ArrowLeft className="mr-1 h-3 w-3" />
+            {t('brief.navigation.previous')}
+          </button>
+        )}
+        
+        {/* Пустой div для выравнивания если нет кнопки назад */}
+        {currentStep === 0 && briefData.hasSite === null && <div></div>}
+        
+        {/* Кнопка пропуска справа */}
+        {step.canSkip && (
           <button
             onClick={onSkip}
-            className="text-fg/60 hover:text-fg text-sm flex items-center justify-center mx-auto transition-colors"
+            className="text-fg/60 hover:text-fg text-sm flex items-center transition-colors"
           >
             <SkipForward className="mr-1 h-3 w-3" />
             {t('brief.navigation.skip')}
           </button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

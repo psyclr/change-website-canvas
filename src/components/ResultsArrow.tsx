@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next';
 const ResultsArrow = () => {
   const { t } = useTranslation('common');
   const handleClick = () => {
-    const briefSection = document.getElementById('brief');
-    if (briefSection) {
-      briefSection.scrollIntoView({ behavior: 'smooth' });
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

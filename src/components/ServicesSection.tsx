@@ -23,7 +23,7 @@ const ServiceCard = ({
         <h3 className="text-2xl font-display mb-5 font-light">{title}</h3>
         <p className="text-foreground/70 mb-8 leading-relaxed">{description}</p>
         <a 
-          href="#contact" 
+          href="#brief" 
           className="inline-flex items-center text-primary group-hover:translate-x-1 transition-all duration-300"
         >
           Learn more

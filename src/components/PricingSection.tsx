@@ -23,6 +23,20 @@ import { cn } from '@/lib/utils';
 const PricingSection: React.FC = () => {
   const { t, i18n } = useTranslation('common');
   
+  const startBrief = () => {
+    const briefSection = document.getElementById('brief');
+    if (briefSection) {
+      briefSection.scrollIntoView({ behavior: 'smooth' });
+      // Trigger brief start after scroll
+      setTimeout(() => {
+        const startButton = briefSection.querySelector('button[data-start-brief]') as HTMLButtonElement;
+        if (startButton) {
+          startButton.click();
+        }
+      }, 500);
+    }
+  };
+  
   // Use the enhanced pricing hook with promotional logic
   const { 
     packages, 
@@ -50,78 +64,16 @@ const PricingSection: React.FC = () => {
               {t('pricing.subtitle')}
             </p>
 
-            {/* Promotion Announcement */}
-            {hasActivePromotions && (
-              <div className="mb-8 p-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-2xl shadow-lg border-2 border-red-700 max-w-2xl mx-auto">
-                <div className="flex items-center justify-center gap-3 mb-2">
-                  <Zap className="h-6 w-6 animate-pulse" />
-                  <h3 className="text-xl font-bold">Promocja Nowy Klient!</h3>
-                  <Zap className="h-6 w-6 animate-pulse" />
-                </div>
-                <p className="text-red-100 text-lg mb-2">
-                  <span className="font-bold text-2xl text-yellow-300">-70% ZNIŻKI</span> na pakiet Start
-                </p>
-                <p className="text-red-100 text-sm">
-                  Tylko <span className="font-bold">{formatPrice(600, 'PLN', currentLanguage)}</span> zamiast {formatPrice(2000, 'PLN', currentLanguage)} • Ograniczona liczba miejsc
-                </p>
-              </div>
-            )}
-            
-            <div className="inline-flex items-center bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium">
-              {t('pricing.guarantee')}
-            </div>
           </div>
 
 
-          {/* Pricing Cards - Show all 4 packages: Start (with promo), Standard, Pro, Enterprise */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
+          {/* Pricing Cards - 3 columns only */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {packages.map((pkg) => (
               <div
                 key={pkg.id}
-                className={cn(
-                  'relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm border transition-all duration-200 hover:shadow-md',
-                  pkg.popular 
-                    ? 'border-accent shadow-accent/10 ring-1 ring-accent/20 transform scale-105' 
-                    : 'border-muted hover:border-accent/30',
-                  pkg.appliedPromotion && 'ring-2 ring-red-200 border-red-300'
-                )}
+                className="relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-muted hover:border-accent/30 transition-all duration-200 hover:shadow-md flex flex-col justify-between h-full"
               >
-                {/* Promotional Badges */}
-                {pkg.appliedPromotion && (
-                  <NewClientBadge 
-                    promotion={pkg.appliedPromotion}
-                    position="top-center"
-                    size="md"
-                    showCountdown={true}
-                  />
-                )}
-                
-                {pkg.popular && !pkg.appliedPromotion && (
-                  <PopularBadge 
-                    text={t('pricing.popular')}
-                    position="top-center"
-                    size="md"
-                  />
-                )}
-                
-                {pkg.recommended && !pkg.popular && !pkg.appliedPromotion && (
-                  <div className="absolute -top-4 right-4">
-                    <div className="bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                      <Zap className="h-3 w-3" />
-                      {t('pricing.recommended')}
-                    </div>
-                  </div>
-                )}
-
-                {/* Urgency Message */}
-                {pkg.urgencyMessage && (
-                  <UrgencyBadge
-                    text={pkg.urgencyMessage}
-                    position="top-right" 
-                    size="sm"
-                    promotion={pkg.appliedPromotion}
-                  />
-                )}
 
                 {/* Package Name & Price */}
                 <div className="text-center mb-6">
@@ -160,79 +112,39 @@ const PricingSection: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Features */}
-                <div className="space-y-3 mb-8">
-                  {pkg.features.map((feature, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-fg/80">
-                        {t(feature)}
-                      </span>
-                    </div>
-                  ))}
+                <div className="flex-1">
+                  {/* Features */}
+                  <div className="space-y-3 mb-8">
+                    {pkg.features.map((feature, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <Check className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-fg/80">
+                          {t(feature)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                {/* CTA Button */}
-                <Button 
-                  asChild 
-                  className={cn(
-                    'w-full',
-                    pkg.popular || pkg.appliedPromotion
-                      ? 'btn-primary' 
-                      : 'btn-outline hover:bg-accent hover:text-white hover:border-accent'
-                  )}
-                >
-                  <a href="#brief" className="flex items-center justify-center gap-2">
-                    {t(pkg.cta)}
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
-                </Button>
 
-                {/* Promotion Timer */}
-                {pkg.appliedPromotion && pkg.timeRemaining && (
-                  <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-                    <div className="flex items-center justify-center gap-2 text-red-700 text-sm font-medium">
-                      <Clock className="h-4 w-4" />
-                      <span>Promocja kończy się za: {pkg.timeRemaining && Math.ceil(pkg.timeRemaining / (1000 * 60 * 60 * 24))} dni</span>
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
           </div>
 
-          {/* Additional Info */}
+          {/* CTA Section */}
           <div className="text-center mt-12">
-            <p className="text-fg/60 mb-4">
-              {t('pricing.additional_info')}
+            <h3 className="text-2xl md:text-3xl font-heading font-medium mb-4">
+              Tell us about your project
+            </h3>
+            <p className="text-lg text-fg/70 mb-8 max-w-2xl mx-auto">
+              A few questions will help us prepare a personalized proposal
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Check className="h-6 w-6 text-accent" />
-                </div>
-                <h4 className="font-medium mb-2">{t('pricing.benefits.guarantee.title')}</h4>
-                <p className="text-sm text-fg/70">{t('pricing.benefits.guarantee.description')}</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Check className="h-6 w-6 text-accent" />
-                </div>
-                <h4 className="font-medium mb-2">{t('pricing.benefits.support.title')}</h4>
-                <p className="text-sm text-fg/70">{t('pricing.benefits.support.description')}</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Check className="h-6 w-6 text-accent" />
-                </div>
-                <h4 className="font-medium mb-2">{t('pricing.benefits.payment.title')}</h4>
-                <p className="text-sm text-fg/70">{t('pricing.benefits.payment.description')}</p>
-              </div>
-            </div>
+            <Button onClick={startBrief} size="lg" className="rounded-full shadow-md hover:shadow-lg group transition-all duration-300 bg-gradient-to-r from-primary to-primary/90">
+              <span className="flex items-center gap-2 h-14 px-8">
+                {t('hero.cta_primary')} <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Button>
           </div>
-          
-          {/* Pricing Comparison Table */}
-          <PricingComparison />
         </div>
       </div>
     </SectionContainer>

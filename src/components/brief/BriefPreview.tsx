@@ -40,10 +40,10 @@ const BriefPreview: React.FC<BriefPreviewProps> = ({ briefData }) => {
   const styleClasses = getStyleClasses();
 
   return (
-    <div className="bg-white rounded-xl border border-muted p-4 shadow-sm">
+    <div className="bg-white rounded-xl border border-muted p-4 shadow-sm h-[600px] flex flex-col">
       <div className="text-xs text-fg/60 mb-3 text-center">{t('brief.preview.title')}</div>
       
-      <div className={`rounded-lg overflow-hidden ${colors.bg} border`}>
+      <div className={`rounded-lg overflow-hidden ${colors.bg} border flex-1 flex flex-col`}>
         {/* Header */}
         <div className="bg-white border-b px-4 py-3 flex items-center justify-between">
           <div className={`font-semibold ${styleClasses}`}>
@@ -57,22 +57,22 @@ const BriefPreview: React.FC<BriefPreviewProps> = ({ briefData }) => {
         </div>
 
         {/* Hero Section */}
-        <div className={`px-4 py-6 text-center ${colors.bg}`}>
-          <h1 className={`text-lg font-bold mb-2 ${styleClasses}`}>
+        <div className={`px-4 py-4 text-center ${colors.bg}`}>
+          <h1 className={`text-sm font-bold mb-1 ${styleClasses}`}>
             {briefData.business || t('brief.preview.your_business')}
           </h1>
-          <p className="text-xs text-gray-600 mb-3">
+          <p className="text-xs text-gray-600 mb-2">
             {briefData.audience ? `${t('brief.preview.for_audience')} ${briefData.audience}` : t('brief.preview.services_description')}
           </p>
           {(briefData.goals.includes('получать онлайн заявки') || briefData.goals.includes('привлекать новых клиентов')) && (
-            <div className={`inline-block px-3 py-1 ${colors.accent} text-white text-xs rounded`}>
+            <div className={`inline-block px-2 py-1 ${colors.accent} text-white text-xs rounded`}>
               {t('brief.preview.order_service')}
             </div>
           )}
         </div>
 
         {/* Content Sections */}
-        <div className="px-4 py-3 space-y-3">
+        <div className="px-4 py-2 space-y-2 flex-1 overflow-y-auto">
           {(briefData.goals.includes('продавать товары/услуги') || briefData.goals.includes('предоставлять информацию о компании')) && (
             <div className="bg-white rounded p-2">
               <div className="text-xs font-medium mb-1">{t('brief.preview.services')}</div>
@@ -97,7 +97,7 @@ const BriefPreview: React.FC<BriefPreviewProps> = ({ briefData }) => {
           {(briefData.features.includes('интерактивная карта проезда') || briefData.features.includes('интерактивная карта')) && (
             <div className="bg-white rounded p-2">
               <div className="text-xs font-medium mb-1">{t('brief.preview.find_us')}</div>
-              <div className="bg-green-100 h-8 rounded flex items-center justify-center text-xs">
+              <div className="bg-green-100 h-6 rounded flex items-center justify-center text-xs">
                 {t('brief.preview.map')}
               </div>
             </div>
@@ -105,8 +105,8 @@ const BriefPreview: React.FC<BriefPreviewProps> = ({ briefData }) => {
         </div>
 
         {/* Contact Section */}
-        <div className="px-4 py-3 bg-white border-t">
-          <div className="text-xs font-medium mb-2">{t('brief.preview.contacts')}</div>
+        <div className="px-4 py-2 bg-white border-t">
+          <div className="text-xs font-medium mb-1">{t('brief.preview.contacts')}</div>
           <div className="flex justify-between items-center">
             {(briefData.features.includes('кнопка для быстрого звонка') || briefData.features.includes('кнопка звонка')) && (
               <div className={`px-2 py-1 ${colors.accent} text-white text-xs rounded`}>

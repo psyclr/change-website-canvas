@@ -21,7 +21,7 @@ const CtaSection = () => {
             Message us. No pressure — just a real conversation.
           </p>
           <Button asChild size="lg" className="rounded-full shadow-md hover:shadow-lg transition-all duration-300 bg-gradient-to-r from-primary to-primary/90">
-            <a href="#contact" className="flex items-center gap-2 h-14 px-8">
+            <a href="#brief" className="flex items-center gap-2 h-14 px-8">
               Start project <ArrowRight className="h-4 w-4" />
             </a>
           </Button>

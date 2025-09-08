@@ -1,11 +1,18 @@
 
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import SectionContainer from "@/components/layout/SectionContainer";
 import { useTranslation, Trans } from 'react-i18next';
+import { SprayButton } from "@/components/ui/SprayButton";
 
 const HeroSection = () => {
   const { t } = useTranslation('common');
+  
+  const scrollToResults = () => {
+    const resultsSection = document.getElementById('results');
+    if (resultsSection) {
+      resultsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
   return (
     <SectionContainer
@@ -23,16 +30,6 @@ const HeroSection = () => {
           />
         </h1>
 
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center animate-fade-in mb-8 px-4 sm:px-0" style={{ animationDelay: "0.4s" }}>
-          <Button asChild size="lg" className="rounded-full shadow-md hover:shadow-lg group transition-all duration-300 bg-gradient-to-r from-primary to-primary/90 w-full sm:w-auto">
-            <a href="#brief" className="flex items-center gap-2 h-14 px-8">
-              {t('hero.cta_primary')} <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </Button>
-          <Button asChild variant="outline" size="lg" className="rounded-full border-primary/20 h-14 px-8 hover:bg-primary/5 w-full sm:w-auto">
-            <a href="#results">{t('hero.cta_secondary')}</a>
-          </Button>
-        </div>
       </div>
     </SectionContainer>
   );

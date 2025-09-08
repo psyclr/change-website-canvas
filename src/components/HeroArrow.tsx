@@ -14,42 +14,39 @@ const HeroArrow = () => {
   return (
     <div className="container-wide -mt-48">
       <div className="max-w-4xl mx-auto">
-        <button
+        <div
           onClick={handleClick}
-          className="w-full flex justify-between items-center animate-fade-in pb-8 px-16 py-8 overflow-visible cursor-pointer group transition-all duration-300"
-          style={{ animationDelay: "0.6s" }}
+          className="relative w-full h-40 cursor-pointer group"
         >
           {/* Левая стрелка */}
-          <div className="group-hover:scale-110 transition-transform duration-300">
+          <div className="absolute left-1/2 bottom-0 group-hover:scale-125 transition-transform duration-300" style={{ transform: 'translateX(calc(-50% - 18rem))' }}>
             <HandDrawnArrow />
-          </div>
-
-          {/* Текст между стрелками */}
-          <div className="text-center relative">
-            <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
-              {t('hero.arrow_text').split(' ').slice(0, 2).join(' ')} <span className="relative inline-block">
-                {t('hero.arrow_text').split(' ').slice(2).join(' ')}
-                {/* Спрайт под последним словом */}
-                <div className="absolute top-full left-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <div style={{ filter: 'drop-shadow(0 0 1.5px black) drop-shadow(0 0 1.5px black)' }}>
-                    <SprayLine
-                      type="micro"
-                      direction="horizontal"
-                      length={120}
-                      animated={true}
-                      className="scale-100"
-                    />
-                  </div>
-                </div>
-              </span>
-            </p>
           </div>
 
           {/* Правая стрелка */}
-          <div className="group-hover:scale-110 transition-transform duration-300">
+          <div className="absolute right-1/2 bottom-0 group-hover:scale-125 transition-transform duration-300" style={{ transform: 'translateX(calc(50% + 18rem))' }}>
             <HandDrawnArrow />
           </div>
-        </button>
+
+          {/* Спрайт внизу */}
+          <div className="absolute bottom-0 left-1/2 transition-transform duration-300" style={{ transform: 'translateX(calc(-50% + 1rem)) translateY(1rem) scaleY(0.85)' }}>
+            <div className="group-hover:scale-125 transition-transform duration-300">
+              <SprayLine
+                type="micro"
+                direction="horizontal"
+                length={240}
+                animated={true}
+              />
+            </div>
+          </div>
+
+          {/* Текст в середине */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground text-center whitespace-nowrap">
+              {t('hero.arrow_text')}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

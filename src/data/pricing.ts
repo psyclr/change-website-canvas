@@ -122,39 +122,6 @@ const packages: PricingPackage[] = [
       validFrom: '2025-01-01T00:00:00.000Z',
       validThrough: '2025-12-31T23:59:59.999Z'
     }
-  },
-  {
-    id: 'enterprise',
-    name: 'Enterprise',
-    basePrice: 15000,
-    currentPrice: 15000,
-    currency: 'PLN',
-    description: 'Custom solutions tailored to your specific needs',
-    features: [
-      'pricing.tiers.enterprise.feature1', // Complete custom solution
-      'pricing.tiers.enterprise.feature2', // Dedicated project team
-      'pricing.tiers.enterprise.feature3', // Advanced API integrations
-      'pricing.tiers.enterprise.feature4', // Custom management panel
-      'pricing.tiers.enterprise.feature5'  // Unlimited technical support
-    ],
-    limits: {
-      projects: 999, // Virtually unlimited
-      pages: 999, // Virtually unlimited
-      revisions: 999, // Unlimited revisions
-      supportResponseTime: 2, // 2 hour response time
-      storageGB: 500,
-      bandwidthGB: 5000
-    },
-    isPromoEligible: false,
-    popular: false,
-    recommended: false,
-    cta: 'pricing.cta.consult',
-    structuredData: {
-      category: 'WebDevelopmentPackage',
-      availability: 'InStock',
-      validFrom: '2025-01-01T00:00:00.000Z',
-      validThrough: '2025-12-31T23:59:59.999Z'
-    }
   }
 ];
 
@@ -266,8 +233,7 @@ export const isPackageOnPromotion = (packageId: string): boolean => {
 export const legacyPricingMapping = {
   'start': 'starter',
   'standard': 'business', 
-  'pro': 'professional',
-  'enterprise': 'enterprise'
+  'pro': 'professional'
 } as const;
 
 /**
