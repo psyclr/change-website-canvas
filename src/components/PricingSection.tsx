@@ -83,19 +83,27 @@ const PricingSection: React.FC = () => {
                   
                   {/* Price Display */}
                   <div className="mb-2">
-                    <ResponsivePriceDisplay
-                      price={pkg.finalPrice || pkg.currentPrice}
-                      originalPrice={pkg.savings > 0 ? pkg.originalPrice || pkg.basePrice : undefined}
-                      currency="PLN"
-                      variant="large"
-                      packageName={pkg.name}
-                      isPrimary={pkg.popular || pkg.recommended}
-                      showSavings={true}
-                      promotionInfo={pkg.appliedPromotion ? {
-                        discountPercentage: pkg.appliedPromotion.discountPercentage,
-                        badgeText: pkg.appliedPromotion.badgeText,
-                      } : undefined}
-                    />
+                    {pkg.name === 'Start' ? (
+                      <div className="text-center">
+                        <div className="text-lg text-gray-500 line-through">2,000 PLN</div>
+                        <div className="text-3xl font-bold text-green-600">600 PLN</div>
+                        <div className="text-sm text-red-600 font-medium">-70% для новых клиентов</div>
+                      </div>
+                    ) : (
+                      <ResponsivePriceDisplay
+                        price={pkg.finalPrice || pkg.currentPrice}
+                        originalPrice={pkg.savings > 0 ? pkg.originalPrice || pkg.basePrice : undefined}
+                        currency="PLN"
+                        variant="large"
+                        packageName={pkg.name}
+                        isPrimary={pkg.popular || pkg.recommended}
+                        showSavings={true}
+                        promotionInfo={pkg.appliedPromotion ? {
+                          discountPercentage: pkg.appliedPromotion.discountPercentage,
+                          badgeText: pkg.appliedPromotion.badgeText,
+                        } : undefined}
+                      />
+                    )}
                   </div>
 
                   {/* Savings Indicator */}
@@ -114,7 +122,7 @@ const PricingSection: React.FC = () => {
 
                 <div className="flex-1">
                   {/* Features */}
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-3 mb-6">
                     {pkg.features.map((feature, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <Check className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
@@ -123,6 +131,15 @@ const PricingSection: React.FC = () => {
                         </span>
                       </div>
                     ))}
+                    
+                    {/* Bonus text */}
+                    {t(`pricing.tiers.${pkg.id.toLowerCase()}.bonus`) && (
+                      <div className="mt-4 p-3 bg-accent/5 rounded-lg border border-accent/20">
+                        <span className="text-sm text-accent font-medium">
+                          {t(`pricing.tiers.${pkg.id.toLowerCase()}.bonus`)}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
 

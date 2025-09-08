@@ -1,0 +1,32 @@
+{
+  "name": "taskmaster-pouchdb-adapter",
+  "version": "1.0.0",
+  "description": "PouchDB database adapter for task-master CLI with offline-first capabilities",
+  "main": "storage.js",
+  "type": "module",
+  "bin": {
+    "pouchdb-tm": "./cli.js"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "demo": "node demo.js"
+  },
+  "keywords": [
+    "taskmaster",
+    "pouchdb", 
+    "database",
+    "offline-first",
+    "sync",
+    "productivity"
+  ],
+  "author": "Claude + Alexander",
+  "license": "MIT",
+  "dependencies": {
+    "pouchdb": "^9.0.0",
+    "pouchdb-adapter-http": "^9.0.0", 
+    "pouchdb-adapter-leveldb": "^9.0.0"
+  },
+  "peerDependencies": {
+    "task-master-ai": "^0.25.0"
+  }
+}

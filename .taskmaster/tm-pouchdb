@@ -1,0 +1,4 @@
+#!/bin/bash
+# Convenient wrapper for PouchDB task-master
+cd "$(dirname "$0")/.."
+node .taskmaster/pouchdb-adapter/cli.js "$@"
